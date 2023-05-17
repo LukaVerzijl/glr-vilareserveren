@@ -16,7 +16,7 @@ if (mysqli_num_rows($query15_run) > 0) {
                     <h5><?php echo $row2['naam']; ?></h5>
                     <p><?php echo $row2['tekst']; ?>
                     </p>
-                    <a href="pagina.php?naam=<?php echo $row2['naam']; ?>" style="background:#FF6562;border-color:#FF6562;border-radius:25px;padding:10px 50px;" class="btn btn-primary"><?php echo $row2['knoptekst']; ?></a>
+                    <a href="villa.php?naam=<?php echo $row2['naam']; ?>" style="background:#FF6562;border-color:#FF6562;border-radius:25px;padding:10px 50px;" class="btn btn-primary"><?php echo $row2['knoptekst']; ?></a>
                 </div>
             </div>
 
