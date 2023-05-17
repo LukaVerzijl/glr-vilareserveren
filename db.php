@@ -11,6 +11,5 @@ $connetion = new mysqli($serverIp, $userName, $passWord) or die ('Geen verbindin
 mysqli_select_db($connetion, $dataBaseName) or die (mysqli_error($connetion));
 if ($connetion)
 {
-    echo("Conenctie voltoid");
 }
 
