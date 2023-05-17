@@ -9,7 +9,3 @@ $serverPort = "3306";
 //Connect
 $connetion = new mysqli($serverIp, $userName, $passWord) or die ('Geen verbinding mogenlijk');
 mysqli_select_db($connetion, $dataBaseName) or die (mysqli_error($connetion));
-if ($connetion)
-{
-}
-

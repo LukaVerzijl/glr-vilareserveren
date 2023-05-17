@@ -1,4 +1,5 @@
 <?php include 'db.php'; ?>
+<?php include 'navbar.php'; ?>
 
 <?php
 include_once 'db.php';
