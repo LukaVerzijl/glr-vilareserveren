@@ -81,6 +81,40 @@ $row = mysqli_fetch_assoc($result);
             ?>
             <br>
 
+    <div class="container-biedingen">
+        <!--    Lijst met biedingen hieronder-->
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="header2">Biedingen</h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Bod</th>
+                        <th scope="col">Gebruikersnaam</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $query16 = "SELECT * from `biedingen` WHERE Huis = '".$row['naam']."' ORDER BY BodPrijs DESC";
+                    $query16_run = mysqli_query($connetion, $query16);
+                    if (mysqli_num_rows($query16_run) > 0) {
+                        while ($row3 = mysqli_fetch_assoc($query16_run)) {
+                            ?>
+                            <tr>
+                                <td><?php echo $row3['BodPrijs']; ?></td>
+                                <td><?php echo $row3['UserName']; ?></td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
 
 <!--    --><?php //include 'footer.php'; ?>
 
