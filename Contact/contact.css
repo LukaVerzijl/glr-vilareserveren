@@ -1,0 +1,40 @@
+.form{
+    position: absolute;
+    margin-top: 20%;
+    padding: 10px;
+    border: 2px solid #1a222d;
+    margin-left: 40%;
+    font-family: sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.status-msg{
+    margin: auto;
+    height: auto;
+    width: 60%;
+    border-color: greenyellow;
+}
+.form-input{
+    color: #1a222d;
+    font-size: large;
+}
+.textArea{
+    width: 80%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  
+  font-size: 16px;
+  resize: none;
+}
+
+.form-input input{
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    border: 2px solid #ccc;
+}
