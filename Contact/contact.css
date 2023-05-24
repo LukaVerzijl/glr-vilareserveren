@@ -1,24 +1,33 @@
 .form{
     position: absolute;
     margin-top: 20%;
-    padding: 10px;
-    border: 2px solid #1a222d;
+    padding: 50px;
+    background-color: #ffffff;
     margin-left: 40%;
     font-family: sans-serif;
+    border: solid 2px #f5f3f3;
+
+    -webkit-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
+    box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
 }
 body{
     margin: 0;
     padding: 0;
 }
 .status-msg{
-    margin: auto;
-    height: auto;
-    width: 60%;
-    border-color: greenyellow;
+    position: absolute;
+    margin-top: 13%;
+    padding: 10px;
+    border: 2px solid #1a222d;
+    border-radius: 4px;
+    margin-left: 40%;
+    font-family: sans-serif;
+    width: 231px;
 }
 .form-input{
     color: #1a222d;
-    font-size: large;
+    font-size: 25px;
 }
 .textArea{
     width: 80%;
@@ -37,4 +46,14 @@ body{
     background-color: #f8f8f8;
     font-size: 16px;
     border: 2px solid #ccc;
+    height: 50px;
+}
+
+.submit{
+    background-color: #114B5F;
+    color: white;
+    border-radius: 4px;
+    width: 125px;
+    height: 45px;
+    font-size: 16px;
 }
