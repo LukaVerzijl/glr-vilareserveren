@@ -14,7 +14,11 @@ $row = mysqli_fetch_assoc($result);
 <?php if ($row['naam'] != '') {
     ?>
 
+<head>
+    <style>
 
+    </style>
+</head>
 
     <div class="banner">
 
