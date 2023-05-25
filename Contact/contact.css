@@ -1,6 +1,6 @@
 .form{
     position: absolute;
-    margin-top: 20%;
+    margin-top: 15%;
     padding: 50px;
     background-color: #ffffff;
     margin-left: 40%;
@@ -21,7 +21,7 @@ body{
     padding: 10px;
     border: 2px solid #1a222d;
     border-radius: 4px;
-    margin-left: 40%;
+    margin-left: 20%;
     font-family: sans-serif;
     width: 231px;
 }

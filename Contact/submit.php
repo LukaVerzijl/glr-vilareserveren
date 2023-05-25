@@ -42,7 +42,17 @@ if(isset($_POST['submit'])){
             <p><b>Email: </b>".$email."</p> 
             <p><b>Onderwerp: </b>".$subject."</p> 
             <p><b>Bericht: </b>".$message."</p> 
-        "; 
+        ";
+
+        $subject3 = "Villa's 4 U Bevestiging!";
+        $htmlContent2 = " 
+            <h2>Bevestiging contactformulier</h2> 
+            <img id='img' src='https://cdn.discordapp.com/attachments/405360752602644480/1111195741315153950/logovilla4u-mail.png'>
+            <p>beste ".$name.",</p> 
+            <p>Wij hebben dit bericht van u ontvangen vanaf deze E-mail".$email.".</p> 
+            <p><b>Onderwerp: </b>".$subject."</p> 
+            <p><b>Bericht: </b>".$message."</p> 
+        ";
          
       
         $headers = "MIME-Version: 1.0" . "\r\n"; 
@@ -54,7 +64,7 @@ if(isset($_POST['submit'])){
         //Admin
         @mail($toEmail,$subject2, $htmlContent, $headers);
         //User
-        @mail($email, $subject2, $htmlContent, $headers);
+        @mail($email, $subject3, $htmlContent2, $headers);
          
         $status = 'gelukt!'; 
         $statusMsg = 'Bedankt dat u contact met ons opzoekt, wij komen zo snel mogenlijk bij u terug!'; 

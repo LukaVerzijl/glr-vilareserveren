@@ -29,26 +29,28 @@
         }
         .Rectangle_1 {
             position: absolute;
-            overflow: visible;
-            width: 1920px;
-            height: 142px;
+            overflow: hidden;
+            width: 100%;
+            height: 120px;
             left: 0px;
             top: 0px;
+
+            -webkit-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
+            -moz-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
+            box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
         }
         #logovilla4u {
             position: absolute;
             width: 186px;
             height: 110px;
             left: 50px;
-            top: 19px;
-            overflow: visible;
+            top: 8px;
         }
         #Rectangle_2 {
             fill: rgba(17,75,95,1);
         }
         .Rectangle_2 {
             position: absolute;
-            overflow: visible;
             width: 149px;
             height: 60px;
             left: 1641px;
@@ -58,42 +60,40 @@
             left: 1657px;
             top: 48px;
             position: absolute;
-            overflow: visible;
             width: 118px;
             white-space: nowrap;
             text-align: left;
-            font-family: Segoe UI;
+            font-family: sans-serif;
             font-style: normal;
             font-weight: normal;
             font-size: 37px;
-            color: rgba(255,255,255,1);
         }
         #Contact {
             left: 1407px;
             top: 47px;
             position: absolute;
-            overflow: visible;
             width: 128px;
             white-space: nowrap;
             text-align: left;
-            font-family: Segoe UI;
+            font-family: sans-serif;
             font-style: normal;
             font-weight: normal;
-            font-size: 37px;
-            color: rgba(255,255,255,1);
+            font-size: 30px;
         }
         #Home {
             left: 1176px;
             top: 47px;
             position: absolute;
-            overflow: visible;
             width: 100px;
             white-space: nowrap;
             text-align: left;
-            font-family: Segoe UI;
+            font-family: sans-serif;
             font-style: normal;
             font-weight: normal;
-            font-size: 37px;
+            font-size: 30px;
+        }
+        body a {
+            text-decoration: none;
             color: rgba(255,255,255,1);
         }
     </style>
@@ -105,20 +105,20 @@
         <rect id="Rectangle_1" rx="0" ry="0" x="0" y="0" width="1920" height="142">
         </rect>
     </svg>
-    <img id="logovilla4u" src="logovilla4u.png" srcset="logovilla4u.png 1x, logovilla4u@2x.png 2x">
+    <img id="logovilla4u" src="../img/logovilla4u-trans.png" srcset="../img/logovilla4u-trans.png 1x, ../img/logovilla4u-trans.png 2x">
 
     <svg class="Rectangle_2">
         <rect id="Rectangle_2" rx="10" ry="10" x="0" y="0" width="149" height="60">
         </rect>
     </svg>
     <div id="Sign-In">
-        <span>Sign-In</span>
+        <span><a href="#" >Sign-In</a></span>
     </div>
     <div id="Contact">
-        <span>Contact</span>
+        <span><a href="#" >Contact</a></span>
     </div>
     <div id="Home">
-        <span>Home</span>
+        <span><a href="#" >Home</a></span>
     </div>
 </div>
 </body>
