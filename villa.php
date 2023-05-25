@@ -20,6 +20,7 @@ $row = mysqli_fetch_assoc($result);
     </style>
 </head>
 
+<body>
     <div class="banner">
 
     </div>
@@ -42,6 +43,7 @@ $row = mysqli_fetch_assoc($result);
     <br />
     <br />
     <br />
+    <?php include_once 'biedingen.php'; ?>
 
     <?php
     include_once 'db.php';
@@ -95,7 +97,7 @@ $row = mysqli_fetch_assoc($result);
                     </thead>
                     <tbody>
                     <?php
-                    $query16 = "SELECT * from `biedingen` WHERE Huis = '".$row['naam']."' ORDER BY BodPrijs DESC";
+                    $query16 = "SELECT * from `biedingen` WHERE Huis = '".$row['naam']."' ORDER BY BodPrijs DESC LIMIT 5";
                     $query16_run = mysqli_query($connetion, $query16);
                     if (mysqli_num_rows($query16_run) > 0) {
                         while ($row3 = mysqli_fetch_assoc($query16_run)) {
@@ -111,6 +113,21 @@ $row = mysqli_fetch_assoc($result);
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+    <div class="bideningen-form-container">
+        <div>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Bieden</label><br><br>
+                    <label id="info-bieden" class="form-text text-muted">Bieden kan vanaf 1000 euro</label><br>
+
+                    <input type="number" min="1000" class="form-field" name="bodPrijs" required>
+                    <input type="hidden" name="gebruiker" value="test">
+                </div>
+                <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
+                <button type="submit" class="submit" name="submit">Bieden</button>
         </div>
     </div>
 
