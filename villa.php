@@ -115,21 +115,35 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
     </div>
+    <?php
+    $query17 = "SELECT MAX(BodPrijs) FROM `biedingen` WHERE Huis = '".$row['naam']."'";
+    $query17_run = mysqli_query($connetion, $query17);
+    while ($row4 = mysqli_fetch_assoc($query17_run)) {
+        $minbod = $row4['MAX(BodPrijs)'];
+        if ($minbod == NULL) {
+            $minbod = 1000000;
+        } else{
+            $minbod = $minbod + 10000;
+        }
+        ?>
+        <div class="bideningen-form-container">
+            <div>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Bieden</label><br><br>
+                        <label id="info-bieden" class="form-text text-muted">Bieden kan vanaf <?php echo $minbod ?> euro</label><br>
 
-    <div class="bideningen-form-container">
-        <div>
-            <form action="" method="post">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Bieden</label><br><br>
-                    <label id="info-bieden" class="form-text text-muted">Bieden kan vanaf 1000 euro</label><br>
-
-                    <input type="number" min="1000" class="form-field" name="bodPrijs" required>
-                    <input type="hidden" name="gebruiker" value="test">
-                </div>
-                <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
-                <button type="submit" class="submit" name="submit">Bieden</button>
+                        <input type="number" min="<?php echo $minbod    ?>" class="form-field" name="bodPrijs" required>
+                        <input type="hidden" name="gebruiker" value="test">
+                    </div>
+                    <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
+                    <button type="submit" class="submit" name="submit">Bieden</button>
+            </div>
         </div>
-    </div>
+            <?php
+    }
+    ?>
+
 
 
 
