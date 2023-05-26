@@ -18,31 +18,52 @@ $row = mysqli_fetch_assoc($result);
     <style>
         div.banner {
             background-image: url('<?php echo $row['foto']; ?>');
-            background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            width: 100vh;
+            width: 212vh;
             height: 500px;
+            margin-top: -5px;
+        }
+        h3 b {
+            opacity: 1;
+        }
+        div.row {
+            background: black;
+            opacity: 0.55;
+            transform: translateY(-100%);
+            width: 212vh;
+            height: 500px;
+        }
+        .title {
+            opacity: 1;
+            text-align: center;
+            color: white;
+            top: 300px;
+            left: 50%;
+            position: absolute;
+            font-size: 50px;
+        }
+
+        text {
+            float: left;
         }
     </style>
 </head>
 
-<body>
-<div class="banner">
-
-</div>
-
-    <br><br><br>
+    <body>
+    <div class="banner">
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
             </div>
-            <div class="col-md-8">
-                <h3 class="header2"><b><?php echo $row['naam']; ?></b></h3>
-                <p class="header2"><?php echo $row['tekst']; ?></p>
-            </div>
+
             <div class="col-md-2">
             </div>
+        </div>
+        <div class="title">
+            <h3 class="header2"><b><?php echo $row['naam']; ?></b></h3>
+            <p class="header2"><?php echo $row['tekst']; ?></p>
         </div>
     </div>
 
@@ -61,7 +82,7 @@ $row = mysqli_fetch_assoc($result);
             ?>
 
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row2">
                             <div class="col-md-2">
                             </div>
                             <div class="text">
@@ -69,7 +90,7 @@ $row = mysqli_fetch_assoc($result);
                                 <p class="header2"><?php echo $row2['tekst']; ?></p>
                             </div>
                             <div class="image">
-                                <img src="<?php echo $row2['foto']; ?>" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;width:100%;height:auto;">
+                                <img src="<?php echo $row2['foto']; ?>">
 
 
 
