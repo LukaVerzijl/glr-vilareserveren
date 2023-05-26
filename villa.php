@@ -1,7 +1,7 @@
 
 
 <?php include 'db.php'; ?>
-<?php //include './navBar/navbar.php'; ?>
+<?php include './navBar/navbar.php'; ?>
 
 
 <?php
