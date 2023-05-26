@@ -38,7 +38,7 @@
             height: 121px;
 
         }
-        #Go_back {
+        .Go_back {
             position: fixed;
             left: 50%;
             top: 80%;
@@ -51,7 +51,13 @@
             font-style: normal;
             font-weight: bold;
             font-size: 71px;
-            color: rgba(255,255,255,1);
+            color: #FFFFFF;
+            text-decoration: none;
+
+        }
+        .Go_back a {
+            color: #FFFFFF;
+            text-decoration: none;
         }
         #n_3 {
             position: fixed;
@@ -68,13 +74,15 @@
         <rect id="Rectangle_1" rx="0" ry="0" x="0" y="0" width="1920" height="1080">
         </rect>
     </svg>
+    <a href="index.php">
     <svg class="Rectangle_2">
         <rect id="Rectangle_2" rx="30" ry="30" x="0" y="0" width="335" height="121">
         </rect>
     </svg>
-    <div id="Go_back">
+    <div class="Go_back">
         <span>Go back</span>
     </div>
+    </a>
     <img id="n_3" src="./img/404.png">
 
 </div>
