@@ -75,6 +75,9 @@ $row = mysqli_fetch_assoc($result);
 
                             </div>
                             <div class="col-md-2">
+                                <div class="location">
+                                    <p>Locatie:</p>
+                                    <iframe src="<?php echo $row2['location']; ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>
