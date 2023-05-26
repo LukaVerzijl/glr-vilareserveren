@@ -6,22 +6,15 @@
             box-sizing: border-box;
             border: none;
         }
-        #Web_1920__1 {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255,255,255,1);
-            overflow: hidden;
 
-        }
         #Rectangle_1 {
             fill: rgba(55,74,103,1);
         }
         .Rectangle_1 {
             position: absolute;
             overflow: visible;
-            width: 100%;
-            height: 100%;
+            width: 100vh;
+            height: 100vh;
             left: 0px;
             top: 0px;
         }
@@ -59,7 +52,7 @@
             color: #FFFFFF;
             text-decoration: none;
         }
-        #n_3 {
+        #foto {
             position: fixed;
             left: 50%;
             top: 35%;
@@ -69,7 +62,7 @@
     </style>
 </head>
 <body>
-<div id="Web_1920__1">
+<div>
     <svg class="Rectangle_1">
         <rect id="Rectangle_1" rx="0" ry="0" x="0" y="0" width="1920" height="1080">
         </rect>
@@ -83,7 +76,7 @@
         <span>Go back</span>
     </div>
     </a>
-    <img id="n_3" src="./img/404.png">
+    <img id="foto" src="./img/404.png">
 
 </div>
 </body>

@@ -12,27 +12,17 @@
             box-sizing: border-box;
             border: none;
         }
-        #Web_1920__1 {
-            position: absolute;
-            width: 1920px;
-            height: 1080px;
-            background-color: rgba(255,255,255,1);
-            overflow: hidden;
-            --web-view-name: Web 1920 – 1;
-            --web-view-id: Web_1920__1;
-            --web-scale-on-resize: true;
-            --web-enable-deep-linking: true;
+        #page{
+            width: 100%;
         }
-        #Rectangle_1 {
-            fill: rgba(26,34,45,1);
-        }
+
         .Rectangle_1 {
-            position: absolute;
+            /*position: absolute;*/
             overflow: hidden;
             width: 100%;
             height: 120px;
-            left: 0px;
-            top: 0px;
+
+            background-color: rgba(26,34,45,1);
 
             -webkit-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
             -moz-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
@@ -45,15 +35,16 @@
             left: 50px;
             top: 8px;
         }
-        #Rectangle_2 {
-            fill: rgba(17,75,95,1);
-        }
+
         .Rectangle_2 {
             position: absolute;
             width: 149px;
             height: 60px;
             left: 84%;
             top: 42px;
+            border-radius: 20px;
+            background-color: rgba(17,75,95,1);
+
         }
         #Sign-In {
             left: 85%;
@@ -62,31 +53,29 @@
             width: 118px;
             white-space: nowrap;
             text-align: left;
-            font-family: sans-serif;
+            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 37px;
         }
         #Contact {
-            left: 75%;
+            left: 30%;
             top: 48px;
             position: absolute;
-            width: 128px;
             white-space: nowrap;
             text-align: left;
-            font-family: sans-serif;
+            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 30px;
         }
         #Home {
-            left: 65%;
+            left: 20%;
             top: 48px;
             position: absolute;
-            width: 100px;
             white-space: nowrap;
             text-align: left;
-            font-family: sans-serif;
+            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 30px;
@@ -101,13 +90,13 @@
 <body>
 <div id="page">
     <svg class="Rectangle_1">
-        <rect id="Rectangle_1" rx="0" ry="0" x="0" y="0" width="1920" height="142">
+        <rect id="Rectangle_1" rx="0" ry="0" x="0" y="0">
         </rect>
     </svg>
     <img id="logovilla4u" src="../img/logovilla4u-trans.png" srcset="../img/logovilla4u-trans.png 1x, ../img/logovilla4u-trans.png 2x">
     <a href="#" >
     <svg class="Rectangle_2">
-        <rect id="Rectangle_2" rx="10" ry="10" x="0" y="0" width="149" height="60">
+        <rect id="Rectangle_2" rx="10" ry="10" x="0" y="0"  >
         </rect>
     </svg>
     <div id="Sign-In">

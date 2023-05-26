@@ -1,7 +1,6 @@
 
 
 <?php include 'db.php'; ?>
-<?php include './navBar/navbar.php'; ?>
 
 
 <?php
@@ -13,17 +12,25 @@ $row = mysqli_fetch_assoc($result);
 
 <?php if ($row['naam'] != '') {
     ?>
+    <?php include './navBar/navbar.php'; ?>
 
 <head>
     <style>
-
+        div.banner {
+            background-image: url('<?php echo $row['foto']; ?>');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100vh;
+            height: 500px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="banner">
+<div class="banner">
 
-    </div>
+</div>
 
     <br><br><br>
     <div class="container-fluid">
@@ -57,11 +64,11 @@ $row = mysqli_fetch_assoc($result);
                         <div class="row">
                             <div class="col-md-2">
                             </div>
-                            <div class="col-md-4">
+                            <div class="text">
                                 <h3 class="header2"><b><?php echo $row2['titel']; ?></b></h3>
                                 <p class="header2"><?php echo $row2['tekst']; ?></p>
                             </div>
-                            <div class="col-md-4">
+                            <div class="image">
                                 <img src="<?php echo $row2['foto']; ?>" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;width:100%;height:auto;">
 
 
