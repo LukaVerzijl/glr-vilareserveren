@@ -16,25 +16,8 @@ $row = mysqli_fetch_assoc($result);
 
 <head>
     <style>
-        .banner { grid-area: banner; }
-        .text { grid-area: main; }
-        .image { grid-area: image; }
-
-        .grid-container {
-            display: grid;
-            grid-template-areas:
-                'banner banner banner banner banner banner'
-                'main main main main image image';
-            gap: 10px;
-            background-color: #2196F3;
-            padding: 10px;
-        }
-
-        .grid-container > div {
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            padding: 20px 0;
-            font-size: 30px;
+        .banner {
+            
         }
     </style>
 </head>
