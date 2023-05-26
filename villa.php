@@ -1,7 +1,6 @@
 
 
 <?php include 'db.php'; ?>
-<?php include './navBar/navbar.php'; ?>
 
 
 <?php
@@ -13,6 +12,7 @@ $row = mysqli_fetch_assoc($result);
 
 <?php if ($row['naam'] != '') {
     ?>
+    <?php include './navBar/navbar.php'; ?>
 
 <head>
     <style>
