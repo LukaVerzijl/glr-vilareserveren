@@ -62,31 +62,29 @@
             width: 118px;
             white-space: nowrap;
             text-align: left;
-            font-family: sans-serif;
+            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 37px;
         }
         #Contact {
-            left: 75%;
+            left: 30%;
             top: 48px;
             position: absolute;
-            width: 128px;
             white-space: nowrap;
             text-align: left;
-            font-family: sans-serif;
+            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 30px;
         }
         #Home {
-            left: 65%;
+            left: 20%;
             top: 48px;
             position: absolute;
-            width: 100px;
             white-space: nowrap;
             text-align: left;
-            font-family: sans-serif;
+            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 30px;
