@@ -16,17 +16,21 @@ $row = mysqli_fetch_assoc($result);
 
 <head>
     <style>
-        .banner {
-            
+        div.banner {
+            background-image: url('<?php echo $row['foto']; ?>');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100vh;
+            height: 500px;
         }
     </style>
 </head>
 
 <body>
 <div class="banner">
-    <div class="banner-image">
 
-    </div>
+</div>
 
     <br><br><br>
     <div class="container-fluid">
@@ -41,7 +45,6 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
     </div>
-</div>
 
 
     <br />

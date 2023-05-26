@@ -12,27 +12,17 @@
             box-sizing: border-box;
             border: none;
         }
-        #Web_1920__1 {
-            position: absolute;
-            width: 1920px;
-            height: 1080px;
-            background-color: rgba(255,255,255,1);
-            overflow: hidden;
-            --web-view-name: Web 1920 – 1;
-            --web-view-id: Web_1920__1;
-            --web-scale-on-resize: true;
-            --web-enable-deep-linking: true;
+        #page{
+            width: 100%;
         }
-        #Rectangle_1 {
-            fill: rgba(26,34,45,1);
-        }
+
         .Rectangle_1 {
-            position: absolute;
+            /*position: absolute;*/
             overflow: hidden;
             width: 100%;
             height: 120px;
-            left: 0px;
-            top: 0px;
+
+            fill: rgba(26,34,45,1);
 
             -webkit-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
             -moz-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
