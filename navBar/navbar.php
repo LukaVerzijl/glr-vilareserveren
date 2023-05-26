@@ -53,11 +53,11 @@
             position: absolute;
             width: 149px;
             height: 60px;
-            left: 1641px;
+            left: 84%;
             top: 42px;
         }
         #Sign-In {
-            left: 1657px;
+            left: 85%;
             top: 48px;
             position: absolute;
             width: 118px;
@@ -69,8 +69,8 @@
             font-size: 37px;
         }
         #Contact {
-            left: 1407px;
-            top: 47px;
+            left: 75%;
+            top: 48px;
             position: absolute;
             width: 128px;
             white-space: nowrap;
@@ -81,8 +81,8 @@
             font-size: 30px;
         }
         #Home {
-            left: 1176px;
-            top: 47px;
+            left: 65%;
+            top: 48px;
             position: absolute;
             width: 100px;
             white-space: nowrap;
