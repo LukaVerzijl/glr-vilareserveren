@@ -44,9 +44,7 @@ $row = mysqli_fetch_assoc($result);
             font-size: 50px;
         }
 
-        text {
-            float: left;
-        }
+
     </style>
 </head>
 
@@ -90,7 +88,7 @@ $row = mysqli_fetch_assoc($result);
                                 <p class="header2"><?php echo $row2['tekst']; ?></p>
                             </div>
                             <div class="image">
-                                <img src="<?php echo $row2['foto']; ?>">
+                                <img src="<?php echo $row2['foto']; ?>" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;width:100%;height:auto;">
 
 
 
