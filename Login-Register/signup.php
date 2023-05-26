@@ -17,7 +17,7 @@ session_start();
 
 			//save to database
 			$user_id = random_num(20);
-			$query = "insert into gebruikers (id,name,email,wachtwoord) values ('$user_id','$user_name','$email','$password')";
+			$query = "insert into gebruikers (name,email,wachtwoord) values ('$user_name','$email','$password')";
 
 			mysqli_query($connetion, $query);
 
@@ -73,9 +73,9 @@ session_start();
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
 
-			<input id="text" type="text" name="user_name"><br><br>
-			<input id="text" type="password" name="password"><br><br>
-            <input id="text" type="email" name="email"><br><br>
+			<input id="text" placeholder="Name" type="text" name="user_name"><br><br>
+			<input id="text" placeholder="password" type="password" name="password"><br><br>
+            <input id="text" placeholder="email" type="email" name="email"><br><br>
 
 			<input id="button" type="submit" value="Signup"><br><br>
 

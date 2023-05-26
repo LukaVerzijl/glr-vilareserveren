@@ -29,8 +29,8 @@ session_start();
 					if($user_data['wachtwoord'] === $password)
 					{
 
-						$_SESSION['user_id'] = $user_data['user_id'];
-						header("Location: index.php");
+						$_SESSION['id'] = $user_data['id'];
+						header("Location: ../index.php");
 						die;
 					}
 				}
