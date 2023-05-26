@@ -16,12 +16,32 @@ $row = mysqli_fetch_assoc($result);
 
 <head>
     <style>
+        .banner { grid-area: banner; }
+        .text { grid-area: main; }
+        .image { grid-area: image; }
 
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'banner banner banner banner banner banner'
+                'main main main main image image';
+            gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="banner">
+<div class="banner">
+    <div class="banner-image">
 
     </div>
 
@@ -38,6 +58,7 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
     </div>
+</div>
 
 
     <br />
@@ -57,11 +78,11 @@ $row = mysqli_fetch_assoc($result);
                         <div class="row">
                             <div class="col-md-2">
                             </div>
-                            <div class="col-md-4">
+                            <div class="text">
                                 <h3 class="header2"><b><?php echo $row2['titel']; ?></b></h3>
                                 <p class="header2"><?php echo $row2['tekst']; ?></p>
                             </div>
-                            <div class="col-md-4">
+                            <div class="image">
                                 <img src="<?php echo $row2['foto']; ?>" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;width:100%;height:auto;">
 
 
