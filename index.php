@@ -1,4 +1,12 @@
 <?php include 'db.php'; ?>
+<?php
+session_start();
+
+include("Login-Register/functions.php");
+
+$user_data = check_login($connetion);
+
+?>
 <?php include './navbar/navbar.php'; ?>
 
 <?php
@@ -21,6 +29,7 @@ if (mysqli_num_rows($query15_run) > 0) {
                 </div>
             </div>
 
+            Hello, <?php echo $user_data['name']; ?>
 
         </div>
         <?php
