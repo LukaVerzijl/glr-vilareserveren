@@ -22,7 +22,7 @@
             width: 100%;
             height: 120px;
 
-            fill: rgba(26,34,45,1);
+            background-color: rgba(26,34,45,1);
 
             -webkit-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
             -moz-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
@@ -35,15 +35,16 @@
             left: 50px;
             top: 8px;
         }
-        #Rectangle_2 {
-            fill: rgba(17,75,95,1);
-        }
+
         .Rectangle_2 {
             position: absolute;
             width: 149px;
             height: 60px;
             left: 84%;
             top: 42px;
+            border-radius: 20px;
+            background-color: rgba(17,75,95,1);
+
         }
         #Sign-In {
             left: 85%;
@@ -89,13 +90,13 @@
 <body>
 <div id="page">
     <svg class="Rectangle_1">
-        <rect id="Rectangle_1" rx="0" ry="0" x="0" y="0" width="1920" height="142">
+        <rect id="Rectangle_1" rx="0" ry="0" x="0" y="0">
         </rect>
     </svg>
     <img id="logovilla4u" src="../img/logovilla4u-trans.png" srcset="../img/logovilla4u-trans.png 1x, ../img/logovilla4u-trans.png 2x">
     <a href="#" >
     <svg class="Rectangle_2">
-        <rect id="Rectangle_2" rx="10" ry="10" x="0" y="0" width="149" height="60">
+        <rect id="Rectangle_2" rx="10" ry="10" x="0" y="0"  >
         </rect>
     </svg>
     <div id="Sign-In">
