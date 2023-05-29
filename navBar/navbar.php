@@ -84,6 +84,32 @@
             text-decoration: none;
             color: rgba(255,255,255,1);
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 
 </head>
@@ -99,8 +125,16 @@
         <rect id="Rectangle_2" rx="10" ry="10" x="0" y="0"  >
         </rect>
     </svg>
-    <div id="Sign-In">
-        <span>Sign-In</a></span>
+    <div class="dropdown" id="Sign-In">
+    <?php if ($user_data){
+        echo "<span class='dropbtn'>".$user_data['name']."</span>";
+        echo "<div class='dropdown-content'>";
+        echo "<a href='Login-Register/logout.php'>Logout</a>";
+        echo "<a>Admin panel</a>";
+        echo "</div>";
+    } else
+        echo "<span><a href='Login-Register/login.php'>Sign-in</a></span>";
+    ?>
     </div>
     <div id="Contact">
         <span><a href="#" >Contact</a></span>

@@ -29,8 +29,6 @@ if (mysqli_num_rows($query15_run) > 0) {
                 </div>
             </div>
 
-            Hello, <?php echo $user_data['name']; ?>
-
         </div>
         <?php
     }

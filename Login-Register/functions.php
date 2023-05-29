@@ -18,10 +18,6 @@ function check_login($connetion)
 		}
 	}
 
-	//redirect to login
-	header("Location: login.php");
-	die;
-
 }
 
 function random_num($length)

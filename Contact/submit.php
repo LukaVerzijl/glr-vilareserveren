@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
             <h2>Bevestiging contactformulier</h2> 
             <img id='img' src='https://cdn.discordapp.com/attachments/405360752602644480/1111195741315153950/logovilla4u-mail.png'>
             <p>beste ".$name.",</p> 
-            <p>Wij hebben dit bericht van u ontvangen vanaf deze E-mail".$email.".</p> 
+            <p>Wij hebben dit bericht van u ontvangen vanaf deze E-mail: ".$email.".</p> 
             <p><b>Onderwerp: </b>".$subject."</p> 
             <p><b>Bericht: </b>".$message."</p> 
         ";
