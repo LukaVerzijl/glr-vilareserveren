@@ -1,3 +1,14 @@
+<?php
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+    $url = "https://";
+else
+    $url = "http://";
+
+$url.= $_SERVER['HTTP_HOST'];
+
+
+$url.= $_SERVER['REQUEST_URI'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -119,28 +130,41 @@
         <rect id="Rectangle_1" rx="0" ry="0" x="0" y="0">
         </rect>
     </svg>
-    <img id="logovilla4u" src="../img/logovilla4u-trans.png" srcset="../img/logovilla4u-trans.png 1x, ../img/logovilla4u-trans.png 2x">
+    <img id="logovilla4u" src="../img/logovilla4u-trans.png" srcset="img/logovilla4u-trans.png 1x, img/logovilla4u-trans.png 2x">
     <a href="#" >
     <svg class="Rectangle_2">
         <rect id="Rectangle_2" rx="10" ry="10" x="0" y="0"  >
         </rect>
     </svg>
     <div class="dropdown" id="Sign-In">
-    <?php if ($user_data){
+    <?php if (isset($user_data) && ($user_data!==null)){
         echo "<span class='dropbtn'>".$user_data['name']."</span>";
         echo "<div class='dropdown-content'>";
-        echo "<a href='Login-Register/logout.php'>Logout</a>";
-        echo "<a>Admin panel</a>";
+        echo "<a href='logout.php'>Logout</a>";
+        if ($user_data['lvl'] == '2')
+        {
+            echo "<a href='admin.php'>Admin panel</a>";
+        }
         echo "</div>";
-    } else
-        echo "<span><a href='Login-Register/login.php'>Sign-in</a></span>";
+    } else if ($url == "https://villareserveren.lukaverzijl.nl/login")
+    {
+        echo "<span><a href='signup.php'>Sign-up</a></span>";
+    }
+    else if ($url == "https://villareserveren.lukaverzijl.nl/signup")
+    {
+        echo "<span><a href='login.php'>Sign-in</a></span>";
+    }
+    else
+    {
+        echo "<span><a href='login.php'>Sign-in</a></span>";
+    }
     ?>
     </div>
     <div id="Contact">
-        <span><a href="#" >Contact</a></span>
+        <span><a href="contact.php" >Contact</a></span>
     </div>
     <div id="Home">
-        <span><a href="#" >Home</a></span>
+        <span><a href="index.php" >Home</a></span>
     </div>
 </div>
 </body>
