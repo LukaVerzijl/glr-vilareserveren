@@ -105,18 +105,18 @@ $row = mysqli_fetch_assoc($result);
                             aria-label="Slide 4"
                     ></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner h-75 ">
                     <div class="carousel-item active">
-                        <img src="<?php echo $row5['foto'] ?>" class="d-block w-100" alt="foto1"/>
+                        <img src="<?php echo $row5['foto'] ?>" class="d-block w-100 h-80" alt="foto1"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $row5['foto2'] ?>" class="d-block w-100" alt="foto2"/>
+                        <img src="<?php echo $row5['foto2'] ?>" class="d-block w-100 h-80" alt="foto2"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $row5['foto3'] ?>" class="d-block w-100" alt="foto3"/>
+                        <img src="<?php echo $row5['foto3'] ?>" class="d-block w-100 h-80" alt="foto3"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $row5['foto4'] ?>" class="d-block w-100" alt="foto4"/>
+                        <img src="<?php echo $row5['foto4'] ?>" class="d-block w-100 h-80" alt="foto4"/>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-mdb-target="#carouselIndicators" data-mdb-slide="prev" >
@@ -148,7 +148,7 @@ $row = mysqli_fetch_assoc($result);
                             <div class="col-md-2">
                             </div>
                             <div class="text">
-                                <h3 class="header2"><b><?php echo $row2['titel']; ?></b></h3>
+                                <h1 class="header2 mb-5"><b><?php echo $row2['titel']; ?></b></h1>
                                 <p class="header2"><?php echo $row2['tekst']; ?></p>
                             </div>
 
@@ -168,7 +168,7 @@ $row = mysqli_fetch_assoc($result);
         <!--    Lijst met biedingen hieronder-->
         <div class="row2">
             <div class="">
-                <h1 class="">Biedingen</h1>
+                <h2 class="">Biedingen</h2>
                 <table class="table">
                     <thead>
                     <tr>
@@ -210,7 +210,7 @@ $row = mysqli_fetch_assoc($result);
     <div class="row1">
         <div class="column">
             <div class="location">
-                <h1>Locatie:</h1>
+                <h2>Locatie</h2>
                 <iframe src="<?php echo $row6['location']; ?>" width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
@@ -228,7 +228,7 @@ $row = mysqli_fetch_assoc($result);
                 }
                 ?>
                 <div class="column">
-                    <h1>Bieden</h1>
+                    <h2>Bieden</h2>
                     <p>Leuk dat je intresse heb in deze villa! Voer het formulier hieronder in om jou bod uit te brengen, let op je hebt een account nodig om in te loggen.</p>
                     <div>
                         <form action="" method="post" class="needs-validation" novalidate>

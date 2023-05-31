@@ -1,6 +1,15 @@
 <?php include 'db.php'; ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+<script>
+function alert_error() {
+Swal.fire({
+title: 'Error!',
+text: 'Uw bod kon niet worden geplaatst omdat er dit bod al is geplaatst',
+icon: 'error',
+confirmButtonText: 'Melding sluiten'
+})
+}
+</script>
 <?php
 include 'db.php';
 $huis = '';
@@ -25,6 +34,9 @@ if(isset($_POST['submit'])) {
         echo "<meta http-equiv='refresh' content='0'>";
 
     } catch (Exception $e) {
+
+        echo "<script> alert_error(); </script>";
+
     }
 }
 ?>
