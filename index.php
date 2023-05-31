@@ -24,11 +24,17 @@ $user_data = check_login($connetion);
         }
         .card {
             text-align: center;
-            margin-top: 8vh;
+            margin: 0px 10px 30px 20px;
         }
         .card-img-top {
-            width: 25vh;
+            width: 32vh;
             height: 200px;
+            margin-right: 10px;
+            margin-top: 6vh;
+        }
+        .card-body {
+            font-size: 30px;
+            margin-top: 2vh;
         }
     </style>
 </header>
@@ -55,6 +61,7 @@ if (mysqli_num_rows($query15_run) > 0) {
                     <h5><?php echo $row2['naam']; ?></h5>
                     <p><?php echo $row2['tekst']; ?>
                     </p>
+                    <br>
                     <a href="villa.php?naam=<?php echo $row2['naam']; ?>" style="background:#FF6562;border-color:#FF6562;border-radius:25px;padding:10px 50px;" class="btn btn-primary"><?php echo $row2['knoptekst']; ?></a>
                 </div>
             </div>
