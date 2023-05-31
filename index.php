@@ -9,6 +9,31 @@ $user_data = check_login($connetion);
 ?>
 <?php include 'navbar/navbar.php'; ?>
 
+<header>
+    <style>
+        .text {
+            text-align: center;
+            margin-top: 8vh;
+        }
+        .text-title {
+            font-size: 50px;
+        }
+        .text-information {
+            margin-top: 3vh;
+            font-size: 25px;
+        }
+        .card {
+            text-align: center;
+            margin-top: 8vh;
+        }
+        .card-img-top {
+            width: 25vh;
+            height: 200px;
+        }
+    </style>
+</header>
+
+<body>
 <?php
 include_once 'db.php';
 $query15 = "SELECT * from `pagina` WHERE home_page = 1 AND pub = 1";
@@ -18,6 +43,11 @@ if (mysqli_num_rows($query15_run) > 0) {
         ?>
 
         <div class="col-md-4">
+
+            <div class="text">
+                <h1 class="text-title">Villa te Koop</h1>
+                <p class="text-information">Lorem ipsum dolor sit amet. Qui incidunt assumenda aut consequuntur perferendis ad ipsam porro aut ipsam natus et beatae alias.</p>
+            </div>
 
             <div class="card">
                 <img style="border-radius: 0%;" src="<?php echo $row2['foto']; ?>" class="card-img-top" alt="...">
@@ -34,3 +64,4 @@ if (mysqli_num_rows($query15_run) > 0) {
     }
 }
 ?>
+</body>
