@@ -29,8 +29,6 @@ $user_data = check_login($connetion);
         .card-img-top {
             width: 32vh;
             height: 200px;
-            margin-right: 10px;
-            margin-top: 6vh;
         }
         .card-body {
             font-size: 30px;
@@ -56,7 +54,7 @@ if (mysqli_num_rows($query15_run) > 0) {
             </div>
 
             <div class="card">
-                <img style="border-radius: 0%;" src="<?php echo $row2['foto']; ?>" class="card-img-top" alt="...">
+                <img style="border-radius: 0%;" src="<?php echo $row2['foto']; ?>" class="justify-content-center" alt="..." style="width: 32vh; height: 200px;">
                 <div class="card-body">
                     <h5><?php echo $row2['naam']; ?></h5>
                     <p><?php echo $row2['tekst']; ?>
