@@ -1,5 +1,22 @@
 
-
+<link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.css"
+        rel="stylesheet"
+/>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"
+></script>
 <?php include 'db.php'; ?>
 
 
@@ -17,31 +34,32 @@ $row = mysqli_fetch_assoc($result);
 <head>
     <style>
         div.banner {
-            background-image: url('<?php echo $row['foto']; ?>');
-            background-size: cover;
             background-position: center;
             width: 212vh;
             height: 500px;
             margin-top: -5px;
         }
-        h3 b {
-            opacity: 1;
+        .column {
+            float: left;
+            width: 50%;
         }
-        div.row {
-            background: black;
-            opacity: 0.55;
-            transform: translateY(-100%);
-            width: 212vh;
-            height: 500px;
+
+        .row1:after {
+            content: "";
+            display: table;
+            clear: both;
         }
-        .title {
-            opacity: 1;
-            text-align: center;
-            color: white;
-            top: 300px;
-            left: 50%;
-            position: absolute;
-            font-size: 50px;
+        .row1{
+            margin-left: 30px;
+        }
+        *{
+            overflow-x : hidden;
+        }
+        .carousel-control-next-icon{
+            overflow: hidden;
+        }
+        .carousel-control-prev-icon{
+            overflow: hidden;
         }
 
 
@@ -49,21 +67,68 @@ $row = mysqli_fetch_assoc($result);
 </head>
 
     <body>
-    <div class="banner">
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
 
-            <div class="col-md-2">
+    <?php
+    include_once 'db.php';
+    $query3 = "SELECT * from `info` WHERE pagina_id = '".$row['id']."'";
+    $query3_run = mysqli_query($connetion, $query3);
+    if (mysqli_num_rows($query3_run) > 0) {
+        while ($row5 = mysqli_fetch_assoc($query3_run)) {
+            ?>
+
+            <div id="carouselIndicators" class="carousel slide" data-mdb-ride="carousel">
+                <div class="carousel-indicators">
+                    <button
+                            type="button"
+                            data-mdb-target="#carouselIndicators"
+                            data-mdb-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                    ></button>
+                    <button
+                            type="button"
+                            data-mdb-target="#carouselIndicators"
+                            data-mdb-slide-to="1"
+                            aria-label="Slide 2"
+                    ></button>
+                    <button
+                            type="button"
+                            data-mdb-target="#carouselIndicators"
+                            data-mdb-slide-to="2"
+                            aria-label="Slide 3"
+                    ></button>
+                    <button
+                            type="button"
+                            data-mdb-target="#carouselIndicators"
+                            data-mdb-slide-to="3"
+                            aria-label="Slide 4"
+                    ></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="<?php echo $row5['foto'] ?>" class="d-block w-100" alt="foto1"/>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?php echo $row5['foto2'] ?>" class="d-block w-100" alt="foto2"/>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?php echo $row5['foto3'] ?>" class="d-block w-100" alt="foto3"/>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?php echo $row5['foto4'] ?>" class="d-block w-100" alt="foto4"/>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-mdb-target="#carouselIndicators" data-mdb-slide="prev" >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-mdb-target="#carouselIndicators" data-mdb-slide="next" >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-        </div>
-        <div class="title">
-            <h3 class="header2"><b><?php echo $row['naam']; ?></b></h3>
-            <p class="header2"><?php echo $row['tekst']; ?></p>
-        </div>
-    </div>
+            <?php } } ?>
 
 
     <br />
@@ -78,29 +143,16 @@ $row = mysqli_fetch_assoc($result);
     if (mysqli_num_rows($query15_run) > 0) {
         while ($row2 = mysqli_fetch_assoc($query15_run)) {
             ?>
-
-                    <div class="container-fluid">
-                        <div class="row2">
+    <div class="row1">
+                        <div class="column">
                             <div class="col-md-2">
                             </div>
                             <div class="text">
                                 <h3 class="header2"><b><?php echo $row2['titel']; ?></b></h3>
                                 <p class="header2"><?php echo $row2['tekst']; ?></p>
                             </div>
-                            <div class="image">
-                                <img src="<?php echo $row2['foto']; ?>" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;width:100%;height:auto;">
 
-
-
-                            </div>
-                            <div class="col-md-2">
-                                <div class="location">
-                                    <p>Locatie:</p>
-                                    <iframe src="<?php echo $row2['location']; ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
                         </div>
-                    </div>
-
                     <?php
                 }
                 ?>
@@ -112,16 +164,16 @@ $row = mysqli_fetch_assoc($result);
             ?>
             <br>
 
-    <div class="container-biedingen">
+    <div class="column">
         <!--    Lijst met biedingen hieronder-->
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="header2">Biedingen</h1>
-                <table class="table table-striped">
+        <div class="row2">
+            <div class="">
+                <h1 class="">Biedingen</h1>
+                <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">Bod</th>
-                        <th scope="col">Gebruikersnaam</th>
+                        <th scope="col">Geboden door</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -132,8 +184,8 @@ $row = mysqli_fetch_assoc($result);
                         while ($row3 = mysqli_fetch_assoc($query16_run)) {
                             ?>
                             <tr>
-                                <td><?php echo $row3['BodPrijs']; ?></td>
-                                <td><?php echo $row3['UserName']; ?></td>
+                                <td>€<?php echo $row3['BodPrijs']; ?></td>
+                                <td><?php echo $row3['Username']; ?></td>
                             </tr>
                             <?php
                         }
@@ -144,34 +196,81 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
     </div>
-    <?php
-    $query17 = "SELECT MAX(BodPrijs) FROM `biedingen` WHERE Huis = '".$row['naam']."'";
-    $query17_run = mysqli_query($connetion, $query17);
-    while ($row4 = mysqli_fetch_assoc($query17_run)) {
-        $minbod = $row4['MAX(BodPrijs)'];
-        if ($minbod == NULL) {
-            $minbod = 1000000;
-        } else{
-            $minbod = $minbod + 10000;
-        }
-        ?>
-        <div class="bideningen-form-container">
-            <div>
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Bieden</label><br><br>
-                        <label id="info-bieden" class="form-text text-muted">Bieden kan vanaf <?php echo $minbod ?> euro</label><br>
+    </div>
 
-                        <input type="number" min="<?php echo $minbod    ?>" class="form-field" name="bodPrijs" required>
-                        <input type="hidden" name="gebruiker" value="test">
-                    </div>
-                    <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
-                    <button type="submit" class="submit" name="submit">Bieden</button>
+
+
+    <?php
+    include_once 'db.php';
+    $query5 = "SELECT * from `info` WHERE pagina_id = '".$row['id']."'";
+    $query5_run = mysqli_query($connetion, $query5);
+    if (mysqli_num_rows($query5_run) > 0) {
+        while ($row6 = mysqli_fetch_assoc($query5_run)) {
+            ?>
+    <div class="row1">
+        <div class="column">
+            <div class="location">
+                <h1>Locatie:</h1>
+                <iframe src="<?php echo $row6['location']; ?>" width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
+
+        <?php }} ?>
             <?php
-    }
-    ?>
+            $query17 = "SELECT MAX(BodPrijs) FROM `biedingen` WHERE Huis = '".$row['naam']."'";
+            $query17_run = mysqli_query($connetion, $query17);
+            while ($row4 = mysqli_fetch_assoc($query17_run)) {
+                $minbod = $row4['MAX(BodPrijs)'];
+                if ($minbod == NULL) {
+                    $minbod = 1000000;
+                } else{
+                    $minbod = $minbod + 10000;
+                }
+                ?>
+                <div class="column">
+                    <h1>Bieden</h1>
+                    <p>Leuk dat je intresse heb in deze villa! Voer het formulier hieronder in om jou bod uit te brengen, let op je hebt een account nodig om in te loggen.</p>
+                    <div>
+                        <form action="" method="post" class="needs-validation" novalidate>
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Name input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="naam" name="Voornaam" class="form-control" required />
+                                        <label class="form-label" for="naam">Voornaam</label>
+                                        <div class="valid-feedback">Check!</div>
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Name input -->
+                                    <div class="form-outline">
+                                        <input type="text" id="achternaam" name="Achternaam" class="form-control" required/>
+                                        <label class="form-label" for="achternaam">Achternaam</label>
+                                        <div class="valid-feedback">Check!</div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                <div class="form-outline mb-4">
+                                    <input type="number" id="bod" name="bodPrijs" min="<?php echo $minbod ?>" class="form-control"  required/>
+                                    <label class="form-label" for="bod">Het minimale bedrag is €<?php echo $minbod ?></label>
+                                </div>
+                                </div>
+                            </div>
+                                <input type="hidden" name="gebruiker" value="admin">
+                            </div>
+                            <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
+                    <button type="submit" class="btn btn-primary" name="submit">Bieden</button>
+                </div>
+                <?php
+            }
+            ?>
+    </div>
+
 
 
 
@@ -181,7 +280,17 @@ $row = mysqli_fetch_assoc($result);
 
     </body>
     </html>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.form-outline').forEach((formOutline) => {
+                new mdb.Input(formOutline).init();
+            });
 
+            document.querySelectorAll('.form-outline').forEach((formOutline) => {
+                new mdb.Input(formOutline).update();
+            });
+        });
+    </script>
     <?php
 } else {
     ?>
