@@ -1,4 +1,3 @@
-// Purpose: navbar for all pages
 
 <?php
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
