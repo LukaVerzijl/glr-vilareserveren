@@ -1,9 +1,16 @@
-<link rel="stylesheet" href="contact.css">
-<link rel="stylesheet" href="../navBar/navbar.css">
+<link rel="stylesheet" href="Contact/contact.css">
+<?php include 'db.php'; ?>
+<?php
+session_start();
 
-<?php include_once 'submit.php';?>
-<?php include_once '../navBar/navbar.php';?>
+include("Login-Register/functions.php");
 
+$user_data = check_login($connetion);
+
+?>
+
+<?php include_once 'Contact/submit.php';?>
+<?php include_once 'navBar/navbar.php';?>
 
 
 

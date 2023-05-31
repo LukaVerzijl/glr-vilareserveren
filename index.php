@@ -7,7 +7,7 @@ include("Login-Register/functions.php");
 $user_data = check_login($connetion);
 
 ?>
-<?php include './navbar/navbar.php'; ?>
+<?php include 'navbar/navbar.php'; ?>
 
 <?php
 include_once 'db.php';

@@ -1,8 +1,8 @@
 <?php 
 session_start();
 
-	include("../db.php");
-	include("functions.php");
+	include("db.php");
+	include("Login-Register/functions.php");
 
 
 	if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -31,56 +31,27 @@ session_start();
 ?>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Signup</title>
-</head>
-<body>
+<?php include_once 'navBar/navbar.php'; ?>
 
-	<style type="text/css">
-	
-	#text{
-
-		height: 25px;
-		border-radius: 5px;
-		padding: 4px;
-		border: solid thin #aaa;
-		width: 100%;
-	}
-
-	#button{
-
-		padding: 10px;
-		width: 100px;
-		color: white;
-		background-color: lightblue;
-		border: none;
-	}
-
-	#box{
-
-		background-color: grey;
-		margin: auto;
-		width: 300px;
-		padding: 20px;
-	}
-
-	</style>
-
-	<div id="box">
-		
-		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
-
-			<input id="text" placeholder="Name" type="text" name="user_name"><br><br>
-			<input id="text" placeholder="password" type="password" name="password"><br><br>
-            <input id="text" placeholder="email" type="email" name="email"><br><br>
-
-			<input id="button" type="submit" value="Signup"><br><br>
-
-			<a href="login.php">Click to Login</a><br><br>
-		</form>
-	</div>
-</body>
-</html>
+<?php if(!empty($statusMsg)){ ?>
+	<div class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></div>
+<?php } ?>
+<link rel="stylesheet" href="Contact/contact.css">
+<div class="form">
+	<form action="" method="post">
+		<div class="form-input">
+			<label for="name">Naam:</label><br>
+			<input type="text" name="user_name" placeholder="Uw naam" value="<?php echo !empty($postData['user_name'])?$postData['user_name']:''; ?>"><br><br>
+		</div>
+		<div class="form-input">
+			<label for="email">Wachtwoord:</label><br>
+			<input type="password" name="password" placeholder="Uw wachtwoord" value="<?php echo !empty($postData['password'])?$postData['password']:''; ?>"><br><br>
+		</div>
+		<div class="form-input">
+			<label for="email">E-mail:</label><br>
+			<input type="email" name="email" placeholder="Uw E-mail" value="<?php echo !empty($postData['password'])?$postData['email']:''; ?>"><br><br>
+		</div>
+		<br>
+		<input class="submit" type="submit" name="submit" class="btn" value="Verzenden">
+	</form>
+</div>

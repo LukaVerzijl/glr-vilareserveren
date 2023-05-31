@@ -1,6 +1,6 @@
 <?php
 //db
-include_once '../db.php';
+include_once 'db.php';
 
 // Email
 $toEmail = '89955@glr.nl'; 
