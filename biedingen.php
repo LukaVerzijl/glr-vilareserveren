@@ -34,7 +34,8 @@ if(isset($_POST['submit'])) {
         echo "<meta http-equiv='refresh' content='0'>";
 
     } catch (Exception $e) {
-        alert_error();
+
+        echo "<script> alert_error(); </script>";
 
     }
 }
