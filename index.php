@@ -25,20 +25,21 @@ $user_data = check_login($connetion);
         }
         .card {
             text-align: center;
-            border: 2px solid black;
+            border: 1px solid black;
+            box-shadow: 2px 8px 10px 5px #888888;
             padding-bottom: 2vh;
+            font-size: 27px;
         }
         .card-img-top {
             width: 32vh;
             height: 200px;
         }
         .card-body {
-            font-size: 30px;
             margin-top: 2vh;
         }
         .col-md-4 {
             display: flex;
-            justify-content: space-evenly       ;
+            justify-content: space-evenly;
         }
     </style>
 </header>
