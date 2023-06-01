@@ -33,12 +33,7 @@ $row = mysqli_fetch_assoc($result);
 
 <head>
     <style>
-        div.banner {
-            background-position: center;
-            width: 212vh;
-            height: 500px;
-            margin-top: -5px;
-        }
+
         .column {
             float: left;
             width: 50%;
@@ -224,7 +219,7 @@ $row = mysqli_fetch_assoc($result);
                 if ($minbod == NULL) {
                     $minbod = 1000000;
                 } else{
-                    $minbod = $minbod + 10000;
+                    $minbod = $minbod + 1;
                 }
                 ?>
                 <div class="column">
@@ -238,8 +233,7 @@ $row = mysqli_fetch_assoc($result);
                                     <div class="form-outline mb-4">
                                         <input type="text" id="naam" name="Voornaam" class="form-control" required />
                                         <label class="form-label" for="naam">Voornaam</label>
-                                        <div class="valid-feedback">Check!</div>
-
+                                        <div class="invalid-feedback">Voer uw naam in.</div>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -247,22 +241,24 @@ $row = mysqli_fetch_assoc($result);
                                     <div class="form-outline">
                                         <input type="text" id="achternaam" name="Achternaam" class="form-control" required/>
                                         <label class="form-label" for="achternaam">Achternaam</label>
-                                        <div class="valid-feedback">Check!</div>
+                                        <div class="invalid-feedback">Voer een achternaam in.</div>
 
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                <div class="form-outline mb-4">
-                                    <input type="number" id="bod" name="bodPrijs" min="<?php echo $minbod ?>" class="form-control"  required/>
-                                    <label class="form-label" for="bod">Het minimale bedrag is €<?php echo $minbod ?></label>
-                                </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="number" id="bod" name="bodPrijs" min="<?php echo $minbod ?>" class="form-control"  required/>
+                                        <label class="form-label" for="bod">Het minimale bedrag is €<?php echo $minbod ?></label>
+                                        <div class="invalid-feedback">Dit bod is niet geldig.</div>
+
+                                    </div>
                                 </div>
                             </div>
                                 <input type="hidden" name="gebruiker" value="admin">
-                            </div>
+
                             <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
                     <button type="submit" class="btn btn-primary" name="submit">Bieden</button>
                 </div>
@@ -290,6 +286,24 @@ $row = mysqli_fetch_assoc($result);
                 new mdb.Input(formOutline).update();
             });
         });
+
+        (() => {
+            'use strict';
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms).forEach((form) => {
+                form.addEventListener('submit', (event) => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
     </script>
     <?php
 } else {

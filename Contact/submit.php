@@ -20,18 +20,18 @@ if(isset($_POST['submit'])){
     $message = trim($_POST['message']); 
      
     // kijk of de info goed is
-    if(empty($name)){
-         $valErr .= '* Vul eerst uw naam in.<br>';
-    }
-    if(empty($email) || filter_var($email, FILTER_VALIDATE_EMAIL) === false){ 
-        $valErr .= '* Vul eerst een geldig E-mail in.<br>';
-    } 
-    if(empty($subject)){ 
-        $valErr .= '* Vul eerst uw onderwerp in.<br>';
-    } 
-    if(empty($message)){ 
-        $valErr .= '* Vul eerst een bericht in.<br>';
-    }
+        //    if(empty($name)){
+        //         $valErr .= '* Vul eerst uw naam in.<br>';
+        //    }
+        //    if(empty($email) || filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+        //        $valErr .= '* Vul eerst een geldig E-mail in.<br>';
+        //    }
+        //    if(empty($subject)){
+        //        $valErr .= '* Vul eerst uw onderwerp in.<br>';
+        //    }
+        //    if(empty($message)){
+        //        $valErr .= '* Vul eerst een bericht in.<br>';
+        //    }
 
     if(empty($valErr)){ 
         // maak de email

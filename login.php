@@ -76,12 +76,12 @@ session_start();
      <h1 class="text-center mt-4 mb-6">Login</h1>
     <form action="" method="post" class="needs-validation" novalidate>
         <div class="form-outline mb-4">
-            <input type="text" id="username" name="user_name" class="form-control" />
+            <input type="text" id="username" name="user_name" class="form-control" required />
             <label class="form-label" for="username">Username</label>
             <div class="invalid-feedback">Voer een username in.</div>
         </div>
         <div class="form-outline">
-            <input type="password" name="password" id="typePassword" class="form-control" />
+            <input type="password" name="password" id="typePassword" class="form-control" required />
             <label class="form-label" for="typePassword">Wachtwoord</label>
             <div class="invalid-feedback">Voer een wachtwoord in.</div>
 
