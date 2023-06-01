@@ -16,6 +16,20 @@ $user_data = check_login($connetion);
     <div class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></div>
 <?php } ?>
 
+<div class="panel5">
+    <h1 class="header">Keur een bod goed</h1>
+    <form method="post">
+        <div class="form-input">
+            <label for="name">Naam huis:</label><br>
+            <input class="naam" type="text" name="huisName" placeholder="Naam van het huis"><br><br>
+            <label for="name">Naam user:</label><br>
+            <input class="naam" type="text" name="user_name" placeholder="Naam van de user"><br><br>
+        </div>
+
+        <input class="submit" type="submit" name="submit3" class="btn" value="Save">
+    </form>
+</div>
+
 <div class="panel1">
     <h1 class="header">Geef een user admin rechten</h1>
     <form method="post">
@@ -25,6 +39,18 @@ $user_data = check_login($connetion);
         </div>
 
         <input class="submit" type="submit" name="submit" class="btn" value="Save">
+    </form>
+</div>
+
+<div class="panel4">
+    <h1 class="header">Haal een user van de admin lijst af</h1>
+    <form method="post">
+        <div class="form-input">
+            <label for="name">Naam:</label><br>
+            <input class="naam" type="text" name="user_name" placeholder="Naam van de user"><br><br>
+        </div>
+
+        <input class="submit" type="submit" name="submit2" class="btn" value="Save">
     </form>
 </div>
 
@@ -35,18 +61,17 @@ $user_data = check_login($connetion);
             <tr>
                 <th>Huis</th>
                 <th>Bod</th>
+                <th>Username</th>
             </tr>
             <tr>
                 <?php
-
-                if (mysqli_num_rows($sql2) > 0) {
-                    //get the output of each row
-                    while($i = mysqli_fetch_assoc($sql2)) {
-                        //get id and name columns
-                        echo "<tr> <td>".$i["Huis"]."</td> <td>".$i["BodPrijs"]."</td> <tr>";
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo "<tr> <td>".$row["Huis"]."</td> <td> €" . $row["BodPrijs"] ."</td> <td>".$row["Username"] ."</td> </tr>";
                     }
                 } else {
-                    echo "No results";
+                    echo "<tr> <td> Geen resultaat </td> <td>Geen resultaat</td> <td>Geen resultaat</td> </tr>";
                 }
                 ?>
             </tr>
@@ -54,14 +79,26 @@ $user_data = check_login($connetion);
     </div>
 </div>
 
-<div class="panel1">
-    <h1 class="header">Geef een user admin rechten</h1>
-    <form method="post">
-        <div class="form-input">
-            <label for="name">Naam:</label><br>
-            <input class="naam" type="text" name="user_name" placeholder="Naam van de user"><br><br>
-        </div>
-
-        <input class="submit" type="submit" name="submit" class="btn" value="Save">
-    </form>
+<div class="panel3">
+    <h1 class="header">Admins</h1>
+    <div class="list2">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Naam</th>
+            </tr>
+            <tr>
+                <?php
+                if ($result2->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result2->fetch_assoc()) {
+                        echo "<tr> <td>".$row["id"]."</td> <td>" . $row["name"] ."</td> </tr>";
+                    }
+                } else {
+                    echo "<tr> <td> Geen resultaat </td> <td>Geen resultaat</td> </tr>";
+                }
+                ?>
+            </tr>
+        </table>
+    </div>
 </div>

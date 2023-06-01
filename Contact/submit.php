@@ -11,7 +11,7 @@ $postData = $statusMsg = $valErr = '';
 $status = 'error';
  
 // Als het goed gaat met de form
-if(isset($_POST['submit'])){ 
+if(isset($_POST['submit'])){
     // krijg data van form
     $postData = $_POST; 
     $name = trim($_POST['name']); 
