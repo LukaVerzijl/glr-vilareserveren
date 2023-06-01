@@ -85,7 +85,7 @@ session_start();
 		<br>
 		<input class="btn btn-primary btn-block mb-4" type="submit" name="submit" class="btn" value="Verzenden">
         <div class="text-center">
-            <p>Heb je al een account? <a href="./login.php.php" style="color: black">Inloggen</a></p>
+            <p>Heb je al een account? <a href="./login.php" style="color: black">Inloggen</a></p>
 
         </div>
 	</form>
