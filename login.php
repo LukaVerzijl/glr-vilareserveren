@@ -72,16 +72,16 @@ session_start();
 
 <body>
 <div class="row d-flex justify-content-center"  >
-    <div class="col-md-6 rounded-3" style="margin-top: 150px; width: 300px;">
-     <h1 class="text-center mb-6">Login</h1>
+    <div class="col-md-6 rounded-3 border shadow-5" style="margin-top: 150px; width: 600px;">
+     <h1 class="text-center mt-4 mb-6">Login</h1>
     <form action="" method="post" class="needs-validation" novalidate>
         <div class="form-outline mb-4">
-            <input type="text" id="username" name="user_name" class="form-control" />
+            <input type="text" id="username" name="user_name" class="form-control" required />
             <label class="form-label" for="username">Username</label>
             <div class="invalid-feedback">Voer een username in.</div>
         </div>
         <div class="form-outline">
-            <input type="password" name="password" id="typePassword" class="form-control" />
+            <input type="password" name="password" id="typePassword" class="form-control" required />
             <label class="form-label" for="typePassword">Wachtwoord</label>
             <div class="invalid-feedback">Voer een wachtwoord in.</div>
 

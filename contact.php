@@ -38,9 +38,9 @@ $user_data = check_login($connetion);
 <?php } ?>
 
 <!-- Form fields -->
-<div class="row d-flex justify-content-center"  >
-    <div class="col-md-6 rounded-3" style="margin-top: 150px; width: 600px;">
-        <h1 class="text-center mb-6">Contact opnemen</h1>
+<div class="row d-flex justify-content-center "  >
+    <div class="col-md-6 rounded-3 border shadow-5" style="margin-top: 150px; width: 600px;">
+        <h1 class="text-center mt-4 mb-6">Contact opnemen</h1>
         <form action="" method="post" class="needs-validation" novalidate>
             <div class="form-outline mb-4">
                 <input type="text" name="name" id="naam" class="form-control" />

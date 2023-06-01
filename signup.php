@@ -59,9 +59,9 @@ session_start();
 
 
 <div class="row d-flex justify-content-center">
-    <div class="col-md-6 rounded-3" style="margin-top: 150px; width: 300px;">
+    <div class="col-md-6 rounded-3 border shadow-5" style="margin-top: 150px; width: 600px;">
 
-    <h1 class="text-center mb-6">Register</h1>
+    <h1 class="text-center mb-6 mt-4">Register</h1>
     <form action="" method="post" class="needs-validation" novalidate>
 		<div class="form-outline mb-4">
             <input type="text" id="username" class="form-control" name="user_name" required />

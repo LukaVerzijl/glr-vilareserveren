@@ -10,6 +10,18 @@ confirmButtonText: 'Melding sluiten'
 })
 }
 </script>
+
+<?php
+$query17 = "SELECT MAX(BodPrijs) FROM `biedingen` WHERE Huis = '".$row['naam']."'";
+$query17_run = mysqli_query($connetion, $query17);
+while ($row4 = mysqli_fetch_assoc($query17_run)) {
+$minbod = $row4['MAX(BodPrijs)'];
+if ($minbod == NULL) {
+    $minbod = 1000000;
+} else{
+    $minbod = $minbod + 1;
+}}
+?>
 <?php
 include 'db.php';
 $huis = '';
@@ -26,8 +38,16 @@ if(isset($_POST['submit'])) {
 
     $gebruiker = ($_POST['gebruiker']);
 
-
-
+    if($huis == '' || $bodPrijs == '' || $gebruiker == '' || $Achternaam == '' || $Voornaam == '') {
+        echo "<script> alert_error(); </script>";
+        exit();
+    }
+    if(!is_numeric($bodPrijs)) {
+        echo "<script> alert_error(); </script>";
+    }
+    if($bodPrijs < $minbod) {
+        echo "<script> alert_error(); </script>";
+    }
     $query = "INSERT INTO `biedingen` (`Huis`, `BodPrijs`, `UserName`, `Voornaam`, `Achternaam`) VALUES ('" . $huis . "', '" . $bodPrijs . "', '" . $gebruiker . "','" . $Voornaam . "','" . $Achternaam . "')";
     try {
         mysqli_query($connetion, $query);
