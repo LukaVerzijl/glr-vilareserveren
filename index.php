@@ -24,7 +24,6 @@ $user_data = check_login($connetion);
         }
         .card {
             text-align: center;
-            margin: 0px 10px 30px 20px;
         }
         .card-img-top {
             width: 32vh;
@@ -35,6 +34,10 @@ $user_data = check_login($connetion);
         .card-body {
             font-size: 30px;
             margin-top: 2vh;
+        }
+        .col-md-4 {
+            display: flex;
+            justify-content: space-around;
         }
     </style>
 </header>
