@@ -32,7 +32,7 @@ $url.= $_SERVER['REQUEST_URI'];
             padding: 0;
             box-sizing: border-box;
             border: none;
-            font-family: 'Roboto', sans-serif;
+            font-family: Roboto;
         }
         h1 {
             font-weight: 500;
@@ -71,24 +71,12 @@ $url.= $_SERVER['REQUEST_URI'];
             left: 84%;
             top: 42px;
             border-radius: 20px;
-            background-color: rgba(17,75,95,1);
+            background-color: rgba(17, 75, 95, 1);
 
-        }
-        #Sign-In {
-            left: 85%;
-            top: 48px;
-            position: absolute;
-            width: 118px;
-            white-space: nowrap;
-            text-align: left;
-            font-family: Arial;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 37px;
         }
         #Contact {
             left: 30%;
-            top: 48px;
+            top: 44px;
             position: absolute;
             white-space: nowrap;
             text-align: left;
@@ -99,7 +87,7 @@ $url.= $_SERVER['REQUEST_URI'];
         }
         #Home {
             left: 20%;
-            top: 48px;
+            top: 44px;
             position: absolute;
             white-space: nowrap;
             text-align: left;
@@ -113,8 +101,14 @@ $url.= $_SERVER['REQUEST_URI'];
             color: rgba(255,255,255,1);
         }
         .dropdown {
-            position: relative;
+            position: absolute;
             display: inline-block;
+            top: 44px;
+            font-family: Roboto;
+            font-size: 30px;
+            left: 75%;
+            color:white
+
         }
 
         .dropdown-content {
@@ -131,12 +125,112 @@ $url.= $_SERVER['REQUEST_URI'];
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            font-size: 20px;
         }
 
         .dropdown-content a:hover {background-color: #f1f1f1}
 
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+
+        #bottone5 {
+            position: absolute;
+            display: block;
+            align-items: center;
+            background-color: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: .25rem;
+            box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.85);
+            text-decoration: none;
+            cursor: pointer;
+            /*display: inline-flex;*/
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 600;
+            justify-content: center;
+            line-height: 1.25;
+            min-height: 3rem;
+            padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+                transition: all 250ms;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: baseline;
+            width: auto;
+            top: 40px;
+            left: 75%;
+            z-index: 1;
+        }
+
+        #bottone5:hover,
+        #bottone5:focus {
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+            color: rgba(0, 0, 0, 0.65);
+        }
+
+        #bottone5:hover {
+            transform: translateY(-1px);
+        }
+
+        #bottone5:active {
+            background-color: #F0F0F1;
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+            color: rgba(0, 0, 0, 0.65);
+            transform: translateY(0);
+        }
+        #button2 {
+            position: absolute;
+            display: block;
+            align-items: center;
+            background-color: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: .25rem;
+            box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.85);
+            text-decoration: none;
+            cursor: pointer;
+            /*display: inline-flex;*/
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 600;
+            justify-content: center;
+            line-height: 1.25;
+            min-height: 3rem;
+            padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+            transition: all 250ms;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: baseline;
+            width: auto;
+            top: 40px;
+            left: 75%;
+            z-index: 1;
+        }
+
+        #button2:hover,
+        #button2:focus {
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+            color: rgba(0, 0, 0, 0.65);
+        }
+
+        #button2:hover {
+            transform: translateY(-1px);
+        }
+
+        #button2:active {
+            background-color: #F0F0F1;
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+            color: rgba(0, 0, 0, 0.65);
+            transform: translateY(0);
         }
     </style>
 
@@ -148,32 +242,19 @@ $url.= $_SERVER['REQUEST_URI'];
         </rect>
     </svg>
     <img id="logovilla4u" src="../img/logovilla4u-trans.png" srcset="img/logovilla4u-trans.png 1x, img/logovilla4u-trans.png 2x">
-    <a href="#" >
-    <svg class="Rectangle_2">
-        <rect id="Rectangle_2" rx="10" ry="10" x="0" y="0"  >
-        </rect>
-    </svg>
-    <div class="dropdown" id="Sign-In">
-    <?php if (isset($user_data) && ($user_data!==null)){
-        echo "<span class='dropbtn'>".$user_data['name']."</span>";
+
+
+    <?php if (isset($user_data) && ($user_data!==null)) {
+        echo "    <div class='dropdown'> <span class='dropbtn'>" . $user_data['name'] . "</span>";
         echo "<div class='dropdown-content'>";
         echo "<a href='logout.php'>Logout</a>";
-        if ($user_data['lvl'] == '2')
-        {
+        if ($user_data['lvl'] == '2') {
             echo "<a href='admin.php'>Admin panel</a>";
         }
-        echo "</div>";
-    } else if ($url == "https://villareserveren.lukaverzijl.nl/login")
+        echo "</div></div>";
+    }else
     {
-        echo "<span><a href='signup.php'>Sign-up</a></span>";
-    }
-    else if ($url == "https://villareserveren.lukaverzijl.nl/signup")
-    {
-        echo "<span><a href='login.php'>Sign-in</a></span>";
-    }
-    else
-    {
-        echo "<span><a href='login.php'>Sign-in</a></span>";
+        echo "<button id='bottone5' onclick='location.href = `login.php`'>Sign-in</button>";
     }
     ?>
     </div>

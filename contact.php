@@ -48,19 +48,19 @@ $user_data = check_login($connetion);
                 <div class="invalid-feedback">Voer uw naam in.</div>
             </div>
             <div class="form-outline mb-4">
-                <input type="email" name="email" class="form-control" id="email" />
+                <input type="email" name="email" class="form-control" id="email" required />
                 <label for="email" class="form-label">E-mail</label>
                 <div class="invalid-feedback">Voer uw email in.</div>
 
             </div>
             <div class="form-outline mb-4">
-                <input type="text" name="subject" class="form-control" id="subject" />
+                <input type="text" name="subject" class="form-control" id="subject" required />
                 <label for="subject" class="form-label">Onderwerp</label>
                 <div class="invalid-feedback">Voer een onderwerp in.</div>
 
             </div>
             <div class="form-outline">
-                <textarea class="form-control" rows="5" id="message" name="message"></textarea>
+                <textarea class="form-control" rows="5" id="message" name="message" required></textarea>
                 <label for="message" class="form-label" >Bericht:</label>
                 <div class="invalid-feedback">Geef uw bericht mee.</div>
             </div>
