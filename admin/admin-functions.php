@@ -84,10 +84,10 @@ if(isset($_POST['submit3'])){
         $row = $result5->fetch_assoc();
         $email = $row['email'];
 
-        $sql6 = "SELECT BodPrijs FROM biedingen WHERE Username='$name' AND Huis='$nameHouse'";
-        $result = $connetion->query($sql6);
-        $row2 = $result5->fetch_assoc();
-        $bod = $row['BodpPijs'];
+        $sql6 = "SELECT MAX(BodPrijs)AS BodPrijs FROM biedingen WHERE Username='$name' AND Huis='$nameHouse'";
+        $result6 = $connetion->query($sql6);
+        $row2 = $result6->fetch_assoc();
+        $bod = $row2['BodPrijs'];
 
 
         // Email
@@ -108,7 +108,7 @@ if(isset($_POST['submit3'])){
             <img id='img' src='https://cdn.discordapp.com/attachments/405360752602644480/1111195741315153950/logovilla4u-mail.png'>
             <p>beste ".$name.",</p> 
             <p>Uw bod is goedgekeurd!</p> 
-            <p><b>Bod: </b>: ".$bod."</p> 
+            <p><b>Bod: </b>€ ".$bod."</p> 
             <p><b>Huis: </b>".$nameHouse."</p> 
         ";
 
