@@ -180,7 +180,7 @@ $row = mysqli_fetch_assoc($result);
                             ?>
                             <tr>
                                 <td>€<?php echo $row3['BodPrijs']; ?></td>
-                                <td><?php echo $row3['Username']; ?></td>
+                                <td><?php echo $row3['Voornaam']; ?></td>
                             </tr>
                             <?php
                         }
