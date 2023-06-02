@@ -52,9 +52,6 @@ $url.= $_SERVER['REQUEST_URI'];
 
             background-color: rgba(26,34,45,1);
 
-            -webkit-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
-            -moz-box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
-            box-shadow: 0px 0px 17px 7px rgba(0,0,0,0.34);
         }
         #logovilla4u {
             position: absolute;
@@ -100,7 +97,7 @@ $url.= $_SERVER['REQUEST_URI'];
             text-decoration: none;
             color: rgba(255,255,255,1);
         }
-        .dropdown {
+        .dropdown2 {
             position: absolute;
             display: inline-block;
             top: 44px;
@@ -111,7 +108,7 @@ $url.= $_SERVER['REQUEST_URI'];
 
         }
 
-        .dropdown-content {
+        .dropdown2-content {
             display: none;
             position: absolute;
             background-color: #f9f9f9;
@@ -120,7 +117,7 @@ $url.= $_SERVER['REQUEST_URI'];
             z-index: 1;
         }
 
-        .dropdown-content a {
+        .dropdown2-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
@@ -128,9 +125,9 @@ $url.= $_SERVER['REQUEST_URI'];
             font-size: 20px;
         }
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown2-content a:hover {background-color: #f1f1f1}
 
-        .dropdown:hover .dropdown-content {
+        .dropdown2:hover .dropdown2-content {
             display: block;
         }
 
@@ -245,19 +242,16 @@ $url.= $_SERVER['REQUEST_URI'];
 
 
     <?php if (isset($user_data) && ($user_data!==null)) {
-        echo "    <div class='dropdown'> <span class='dropbtn'>" . $user_data['name'] . "</span>";
-        echo "<div class='dropdown-content'>";
-        echo "<a href='logout.php'>Logout</a>";
+        echo "<button id='bottone5' onclick='location.href = `logout.php`'>Logout</button>";
         if ($user_data['lvl'] == '2') {
-            echo "<a href='admin.php'>Admin panel</a>";
+            echo "<div id='Contact' style='left: 40%'><a href='admin.php'>Admin</a></div>";
         }
-        echo "</div></div>";
     }else
     {
-        echo "<button id='bottone5' onclick='location.href = `login.php`'>Sign-in</button>";
+        echo "<button id='bottone5' class='shadow-2-strong' onclick='location.href = `login.php`'>Sign-in</button>";
     }
     ?>
-    </div>
+
     <div id="Contact">
         <span><a href="contact.php" >Contact</a></span>
     </div>
