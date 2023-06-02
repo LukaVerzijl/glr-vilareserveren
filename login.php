@@ -37,43 +37,49 @@ session_start();
 			//read from database
 			$query = "select * from gebruikers where name = '$user_name' limit 1";
 			$result = mysqli_query($connetion, $query);
+            $user_data = mysqli_fetch_assoc($result);
 
-			if($result)
+			if($user_data)
 			{
 				if($result && mysqli_num_rows($result) > 0)
 				{
 
-					$user_data = mysqli_fetch_assoc($result);
-					
+
 					if($user_data['wachtwoord'] === $password)
 					{
 
 						$_SESSION['id'] = $user_data['id'];
 						header("Location: index.php");
 						die;
-					}
+					} else{
+                        $status = "Oops";
+                        $statusMsg = "Verkeerd wachtwoord of username!";
+                        header("Location: login.php");
+
+                    }
 				}
 			}
 			$status = "Oops";
-			$statusMsg = "wrong username or password!";
+			$statusMsg = "Verkeerd wachtwoord of username!";
 		}else
 		{
 			$status = "Oops";
-			$statusMsg = "wrong username or password!";
+			$statusMsg = "Verkeerd wachtwoord of username!";
 		}
 	}
 
 ?>
 <?php include_once 'navBar/navbar.php'; ?>
 
-<?php if(!empty($statusMsg)){ ?>
-	<div class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></div>
-<?php } ?>
+
 
 <body>
 <div class="row d-flex justify-content-center"  >
     <div class="col-md-6 rounded-3 border shadow-5" style="margin-top: 150px; width: 600px;">
      <h1 class="text-center mt-4 mb-6">Login</h1>
+        <?php if(!empty($statusMsg)){ ?>
+            <div class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></div>
+        <?php } ?>
     <form action="" method="post" class="needs-validation" novalidate>
         <div class="form-outline mb-4">
             <input type="text" id="username" name="user_name" class="form-control" required />

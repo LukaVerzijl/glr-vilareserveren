@@ -31,6 +31,14 @@ session_start();
 		$password = $_POST['password'];
         $email = $_POST['email'];
 
+        $query2 = "SELECT * FROM gebruikers WHERE name = '$user_name' OR email = '$email'";
+        $result2 = mysqli_query($connetion, $query2);
+        if(mysqli_num_rows($result2) > 0){
+            $status = "Oops";
+            $statusMsg = "Username of email bestaat al!";
+        }
+        else{
+
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
 		{
 
@@ -47,22 +55,21 @@ session_start();
             $status = "Oops";
             $statusMsg = "Please enter some valid information!";
 		}
-	}
+	}}
 ?>
 
 
 <?php include_once 'navBar/navbar.php'; ?>
 
-<?php if(!empty($statusMsg)){ ?>
-	<div class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></div>
-<?php } ?>
-
-
 <div class="row d-flex justify-content-center">
     <div class="col-md-6 rounded-3 border shadow-5" style="margin-top: 150px; width: 600px;">
 
     <h1 class="text-center mb-6 mt-4">Register</h1>
-    <form action="" method="post" class="needs-validation" novalidate>
+        <?php if(!empty($statusMsg)){ ?>
+            <div class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></div>
+        <?php } ?>
+
+        <form action="" method="post" class="needs-validation" novalidate>
 		<div class="form-outline mb-4">
             <input type="text" id="username" class="form-control" name="user_name" required />
             <label class="form-label" for="username">Username</label>
