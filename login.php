@@ -37,14 +37,14 @@ session_start();
 			//read from database
 			$query = "select * from gebruikers where name = '$user_name' limit 1";
 			$result = mysqli_query($connetion, $query);
+            $user_data = mysqli_fetch_assoc($result);
 
-			if($result)
+			if($user_data)
 			{
 				if($result && mysqli_num_rows($result) > 0)
 				{
 
-					$user_data = mysqli_fetch_assoc($result);
-					
+
 					if($user_data['wachtwoord'] === $password)
 					{
 
@@ -54,7 +54,7 @@ session_start();
 					} else{
                         $status = "Oops";
                         $statusMsg = "Verkeerd wachtwoord of username!";
-                        header("Location: login .php");
+                        header("Location: login.php");
 
                     }
 				}

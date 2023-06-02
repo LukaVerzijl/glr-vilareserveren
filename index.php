@@ -25,17 +25,22 @@ $user_data = check_login($connetion);
         }
         .card {
             text-align: center;
-            border: 1px solid black;
-            box-shadow: 2px 8px 10px 5px #888888;
             padding-bottom: 2vh;
             font-size: 27px;
+            width: 35vh;
+            height: 400px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 30px;
         }
         .card-img-top {
             width: 32vh;
             height: 200px;
+            border-radius: 10px;=
         }
         .card-body {
             margin-top: 2vh;
+            text-align: center;
+            margin-left: 20px;
         }
         .col-md-4 {
             display: flex;
@@ -61,10 +66,10 @@ if (mysqli_num_rows($query15_run) > 0) {
         ?>
 
             <div class="card">
-                <img style="border-radius: 0%;" src="<?php echo $row2['foto']; ?>" class="card-img-top" alt="...">
+                <img style=" margin-top: 20px;" src="<?php echo $row2['foto']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5><?php echo $row2['naam']; ?></h5>
-                    <p><?php echo $row2['tekst']; ?>
+                    <h4 style="font-size: 30px"><?php echo $row2['naam']; ?></h4>
+                    <p style="font-size: 25px"><?php echo $row2['tekst']; ?>
                     </p>
                     <br>
                     <a href="villa.php?naam=<?php echo $row2['naam']; ?>" style="background:#104B5F;border-color:#FF6562;border-radius:15px;padding:10px" class="btn btn-primary"><?php echo $row2['knoptekst']; ?></a>
