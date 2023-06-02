@@ -30,6 +30,7 @@
                 <p style="font-size: 24px; color: #ffffff;">
                     <a href="index.php" style="color: #ffffff; text-decoration: none;" class="home">Home</a>
                 </p>
+                <br/>
                 <p style="font-size: 24px; color: #ffffff.;">
                     <a href="contact.php" style="color: #ffffff; text-decoration: none;" class="contact">Contact</a>
                 </p>
