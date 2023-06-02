@@ -54,6 +54,7 @@ session_start();
 					} else{
                         $status = "Oops";
                         $statusMsg = "Verkeerd wachtwoord of username!";
+                        header("Location: login .php");
 
                     }
 				}
