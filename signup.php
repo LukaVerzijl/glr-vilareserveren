@@ -41,8 +41,6 @@ session_start();
 
                 //save to database
                 $user_id = random_num(20);
-                $query = "insert into gebruikers (name,email,wachtwoord) values ('$user_name','$email','$password')";
-                mysqli_query($connetion, $query);
 
                 $bestaat = true;
                 while ($bestaat) {
@@ -57,6 +55,8 @@ session_start();
                         $bestaat = true;
                     }
                 }
+                $query = "insert into gebruikers (name,email,wachtwoord,code) values ('$user_name','$email','$password','$code')";
+                mysqli_query($connetion, $query);
 
                 $postData = $statusMsg = $valErr = '';
                 $status = 'error';
