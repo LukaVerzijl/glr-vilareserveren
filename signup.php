@@ -79,10 +79,10 @@ session_start();
                     $headers .= 'Van: Villa4U <' . $email . '>' . "\r\n";
                     //User
                     @mail($email, $subject3, $htmlContent2, $headers);
-                    die;
+                    header("Location: login.php");
                 } else {
                     $status = "Oops";
-                    $statusMsg = "Please enter some valid information!";
+                    $statusMsg = "Voer valide informatie in aub!";
                 }
             }
         }
