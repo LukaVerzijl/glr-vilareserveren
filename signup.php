@@ -70,7 +70,7 @@ session_start();
             <h2>Bevestiging account code</h2> 
             <img id='img' src='https://cdn.discordapp.com/attachments/405360752602644480/1111195741315153950/logovilla4u-mail.png'>
             <p>beste " . $user_name . ",</p> 
-            <a href='villareserveren.lukaverzijl.nl/ver?code=".$code.".php'>Klik hier om in te loggen!</a> ";
+            <a href='https://villa4u.lukaverzijl.nl/ver?code=".$code.".php'>Klik hier om in te loggen!</a> ";
 
 
                     $headers = "MIME-Version: 1.0" . "\r\n";
