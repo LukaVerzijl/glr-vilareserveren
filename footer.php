@@ -37,7 +37,7 @@
             </div>
             <div class="aboutme">
                 <p style="font-size: 24px; color: #ffffff; text-align: center">About Us</p>
-                <p style="font-size: 20px; color: #ffffff;">Lorem ipsum dolor sit amet. Qui incidunt assumenda aut consequuntur perferendis ad ipsam porro aut ipsam natus et beatae alias.</p>
+                <p style="font-size: 20px; color: #ffffff;">Betreed de betovering van luxe. Ontdek onze prachtige villa's voor een luxe levensstijl.</p>
             </div>
         </div>
         <br/>
