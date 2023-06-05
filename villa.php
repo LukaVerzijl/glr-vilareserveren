@@ -229,7 +229,7 @@ $row = mysqli_fetch_assoc($result);
                 if ($minbod == NULL) {
                     $minbod = 1000000;
                 } else{
-                    $minbod = $minbod + 1;
+                    $minbod = $minbod + 1000;
                 }
                 ?>
 
@@ -270,7 +270,7 @@ $row = mysqli_fetch_assoc($result);
                                     </div>
                                 </div>
                             </div>
-                                <input type="hidden" name="gebruiker" value="admin">
+<!--                                <input type="hidden" name="gebruiker" value="admin">-->
 
                             <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
                     <button type="submit" class="btn btn-primary btn-block" name="submit">Bieden</button>

@@ -11,6 +11,7 @@ confirmButtonText: 'Melding sluiten'
 }
 </script>
 
+
 <?php
 $query17 = "SELECT MAX(BodPrijs) FROM `biedingen` WHERE Huis = '".$row['naam']."'";
 $query17_run = mysqli_query($connetion, $query17);
@@ -36,7 +37,7 @@ if(isset($_POST['submit'])) {
     $Voornaam = ($_POST['Voornaam']);
     $Achternaam = ($_POST['Achternaam']);
 
-    $gebruiker = ($_POST['gebruiker']);
+    $gebruiker = ($user_data['name']);
 
     if($huis == '' || $bodPrijs == '' || $gebruiker == '' || $Achternaam == '' || $Voornaam == '') {
         echo "<script> alert_error(); </script>";
