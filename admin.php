@@ -16,7 +16,7 @@ if($checkData == 1) {
 
 ?>
 <?php include_once 'admin/admin-functions.php'; ?>
-<?php include './navbar/navbar.php'; ?>
+<?php include_once 'navBar/navbar.php';?>
 <link rel="stylesheet" href="admin/admin.css">
 
 
