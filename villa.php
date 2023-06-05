@@ -19,7 +19,14 @@
 ></script>
 <?php include 'db.php'; ?>
 
+<?php
+session_start();
 
+include("Login-Register/functions.php");
+
+$user_data = check_login($connetion);
+
+?>
 <?php
 $naam=$_REQUEST['naam'];
 $query = "SELECT * from pagina where naam='".$naam."' AND pub = 1";
@@ -222,9 +229,12 @@ $row = mysqli_fetch_assoc($result);
                     $minbod = $minbod + 1;
                 }
                 ?>
+
+    <?php if (isset($user_data) && ($user_data!==null)) {
+        ?>
                 <div class="column">
                     <h2>Bieden</h2>
-                    <p>Leuk dat je intresse heb in deze villa! Voer het formulier hieronder in om jou bod uit te brengen, let op je hebt een account nodig om in te loggen.</p>
+                    <p>Leuk dat je intresse heb in deze villa! Voer het formulier hieronder in om jou bod uit te brengen.</p>
                     <div>
                         <form action="" method="post" class="needs-validation" novalidate>
                             <div class="row">
@@ -260,10 +270,50 @@ $row = mysqli_fetch_assoc($result);
                                 <input type="hidden" name="gebruiker" value="admin">
 
                             <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
-                    <button type="submit" class="btn btn-primary" name="submit">Bieden</button>
+                    <button type="submit" class="btn btn-primary btn-block" name="submit">Bieden</button>
                 </div>
                 <?php
-            }
+           } else{
+       ?>
+                    <div class="column">
+
+                        <h2>Bieden</h2>
+                        <p>Leuk dat je intresse heb in deze villa! Je kan alleen bieden als je ingelogd bent. Klik hieronder om in te loggen </p>
+                        <div class="row">
+
+                            <div class="col">
+                                <!-- Name input -->
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="naam" name="Voornaam" class="form-control" disabled />
+                                    <label class="form-label" for="naam">Voornaam</label>
+                                    <div class="invalid-feedback">Voer uw naam in.</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- Name input -->
+                                <div class="form-outline">
+                                    <input type="text" id="achternaam" name="Achternaam" class="form-control" disabled/>
+                                    <label class="form-label" for="achternaam">Achternaam</label>
+                                    <div class="invalid-feedback">Voer een achternaam in.</div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-outline mb-4">
+                                    <input type="number" id="bod" name="bodPrijs" min="<?php echo $minbod ?>" class="form-control"  disabled/>
+                                    <label class="form-label" for="bod">Het minimale bedrag is €<?php echo $minbod ?></label>
+                                    <div class="invalid-feedback">Dit bod is niet geldig.</div>
+
+                                </div>
+                                <button class="btn btn-primary btn-block  " style="height: 100px; font-size: 30px; width: 50%; " onclick="location.href = 'login.php'">Login</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <?php }}
             ?>
     </div>
 

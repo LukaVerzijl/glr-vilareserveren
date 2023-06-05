@@ -82,4 +82,6 @@ if (mysqli_num_rows($query15_run) > 0) {
 }
 ?>
 </div>
+
 </body>
+<?php include 'footer.php'; ?>
