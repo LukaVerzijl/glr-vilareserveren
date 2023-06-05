@@ -52,7 +52,7 @@ $user_data = check_login($connetion);
 <body>
 <div class="text">
     <h1 class="text-title">Villa te Koop</h1>
-    <p class="text-information">Lorem ipsum dolor sit amet. Qui incidunt assumenda aut consequuntur perferendis ad ipsam porro aut ipsam natus et beatae alias.</p>
+    <p class="text-information"> Betreed de betovering van luxe: Ontdek onze prachtige villa's voor een luxe levensstijl.</p>
 </div>        <div class="col-md-4">
 
 
