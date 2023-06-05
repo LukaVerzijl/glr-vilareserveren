@@ -24,38 +24,69 @@ session_start();
 	include("Login-Register/functions.php");
 
 
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
-		//something was posted
-		$user_name = $_POST['user_name'];
-		$password = $_POST['password'];
+	if($_SERVER['REQUEST_METHOD'] == "POST") {
+        //something was posted
+        $user_name = $_POST['user_name'];
+        $password = $_POST['password'];
         $email = $_POST['email'];
 
         $query2 = "SELECT * FROM gebruikers WHERE name = '$user_name' OR email = '$email'";
         $result2 = mysqli_query($connetion, $query2);
-        if(mysqli_num_rows($result2) > 0){
+        if (mysqli_num_rows($result2) > 0) {
             $status = "Oops";
             $statusMsg = "Username of email bestaat al!";
+        } else {
+
+            if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
+
+                //save to database
+                $user_id = random_num(20);
+                $query = "insert into gebruikers (name,email,wachtwoord) values ('$user_name','$email','$password')";
+                mysqli_query($connetion, $query);
+
+                $bestaat = true;
+                while ($bestaat) {
+                    $code = random_num(20);
+                    $sql4 = "SELECT code FROM gebruikers";
+                    $result2 = $connetion->query($sql4);
+                    $row2 = $result2->fetch_assoc();
+                    $checkCode = $row2['code'];
+                    if ($checkCode != $code) {
+                        $bestaat = false;
+                    } else{
+                        $bestaat = true;
+                    }
+                }
+
+                $postData = $statusMsg = $valErr = '';
+                $status = 'error';
+
+                $postData = $_POST;
+
+                if (empty($valErr)) {
+                    // maak de email
+                    $subject3 = "Villa's 4 U account bevestiging!";
+                    $htmlContent2 = " 
+            <h2>Bevestiging account code</h2> 
+            <img id='img' src='https://cdn.discordapp.com/attachments/405360752602644480/1111195741315153950/logovilla4u-mail.png'>
+            <p>beste " . $user_name . ",</p> 
+            <a href='villareserveren.lukaverzijl.nl/ver?code=".$code.".php'>Klik hier om in te loggen!</a> ";
+
+
+                    $headers = "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                    $headers .= 'Van: Villa4U <' . $email . '>' . "\r\n";
+                    //User
+                    @mail($email, $subject3, $htmlContent2, $headers);
+                    die;
+                } else {
+                    $status = "Oops";
+                    $statusMsg = "Please enter some valid information!";
+                }
+            }
         }
-        else{
-
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-		{
-
-			//save to database
-			$user_id = random_num(20);
-			$query = "insert into gebruikers (name,email,wachtwoord) values ('$user_name','$email','$password')";
-
-			mysqli_query($connetion, $query);
-
-			header("Location: login.php");
-			die;
-		}else
-		{
-            $status = "Oops";
-            $statusMsg = "Please enter some valid information!";
-		}
-	}}
+    }
 ?>
 
 

@@ -5,6 +5,14 @@ session_start();
 include("Login-Register/functions.php");
 
 $user_data = check_login($connetion);
+$checkData = is_null($user_data);
+
+if($checkData == 1) {
+    die;
+} else if($user_data['lvl'] < 2 || $user_data['lvl'] > 2)
+{
+    die;
+}
 
 ?>
 <?php include_once 'admin/admin-functions.php'; ?>

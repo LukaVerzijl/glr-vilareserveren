@@ -45,7 +45,7 @@ session_start();
 				{
 
 
-					if($user_data['wachtwoord'] === $password)
+					if($user_data['wachtwoord'] === $password && $user_data['geactiveerd'] === 1)
 					{
 
 						$_SESSION['id'] = $user_data['id'];
