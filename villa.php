@@ -151,6 +151,9 @@ $row = mysqli_fetch_assoc($result);
                             </div>
                             <div class="text">
                                 <h1 class="header2 mb-5"><b><?php echo $row2['titel']; ?></b></h1>
+                                <p><i class="fa-solid fa-bed"></i> <?php echo $row2['slaapkamers']; ?> Slaapkamers</p>
+                                <p><i class="fa-solid fa-up-right-and-down-left-from-center"></i> <?php echo $row2['huisoppervlakte']; ?> m² woon oppervlakte</p>
+                                <p><i class="fa-solid fa-up-down-left-right"></i> <?php echo $row2['totaaloppervlakte']; ?> m² totale oppervlakte</p>
                                 <p class="header2"><?php echo $row2['tekst']; ?></p>
                             </div>
 
@@ -260,7 +263,7 @@ $row = mysqli_fetch_assoc($result);
                             <div class="row">
                                 <div class="col">
                                     <div class="form-outline mb-4">
-                                        <input type="number" id="bod" name="bodPrijs" min="<?php echo $minbod ?>" class="form-control"  required/>
+                                        <input type="number" id="bod" max="10000000" name="bodPrijs" min="<?php echo $minbod ?>" class="form-control"  required/>
                                         <label class="form-label" for="bod">Het minimale bedrag is €<?php echo $minbod ?></label>
                                         <div class="invalid-feedback">Dit bod is niet geldig.</div>
 
@@ -308,7 +311,7 @@ $row = mysqli_fetch_assoc($result);
                                     <div class="invalid-feedback">Dit bod is niet geldig.</div>
 
                                 </div>
-                                <button class="btn btn-primary btn-block  " style="height: 100px; font-size: 30px; width: 50%; " onclick="location.href = 'login.php'">Login</button>
+                                <button class="btn btn-primary btn-block  " style="height: 100px; font-size: 30px; width: 100%; " onclick="location.href = 'login.php'">Login</button>
 
                             </div>
                         </div>

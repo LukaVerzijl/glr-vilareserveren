@@ -21,7 +21,7 @@
     }
 </style>
 
-<footer style="background-color: rgba(26,34,45,1); font-family: Roboto; margin-top: 120px;">
+<footer style="background-color: rgba(26,34,45,1); font-family: Roboto; margin-top: 120px; ">
     <br/>
     <br/>
     <div class="container">

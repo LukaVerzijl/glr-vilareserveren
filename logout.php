@@ -8,5 +8,5 @@ if(isset($_SESSION['id']))
 
 }
 
-header("Location: login.php");
+header('Location: ' . $_SERVER["HTTP_REFERER"] );
 die;

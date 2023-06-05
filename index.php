@@ -28,7 +28,7 @@ $user_data = check_login($connetion);
             padding-bottom: 2vh;
             font-size: 27px;
             width: 35vh;
-            height: 400px;
+            height: auto;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             border-radius: 30px;
         }
