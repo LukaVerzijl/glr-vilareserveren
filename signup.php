@@ -30,6 +30,8 @@ session_start();
         $password = $_POST['password'];
         $email = $_POST['email'];
 
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
         $query2 = "SELECT * FROM gebruikers WHERE name = '$user_name' OR email = '$email'";
         $result2 = mysqli_query($connetion, $query2);
         if (mysqli_num_rows($result2) > 0) {
@@ -55,7 +57,7 @@ session_start();
                         $bestaat = true;
                     }
                 }
-                $query = "insert into gebruikers (name,email,wachtwoord,code) values ('$user_name','$email','$password','$code')";
+                $query = "insert into gebruikers (name,email,wachtwoord,code) values ('$user_name','$email','$hashed_password','$code')";
                 mysqli_query($connetion, $query);
 
                 $postData = $statusMsg = $valErr = '';
