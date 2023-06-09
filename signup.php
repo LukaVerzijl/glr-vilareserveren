@@ -17,6 +17,10 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"
 ></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</script>
+
 <?php
 session_start();
 
@@ -81,7 +85,7 @@ session_start();
                     $headers .= 'Van: Villa4U <' . $email . '>' . "\r\n";
                     //User
                     @mail($email, $subject3, $htmlContent2, $headers);
-                    header("Location: login.php");
+                    echo "<script> succes(); </script>";
                 } else {
                     $status = "Oops";
                     $statusMsg = "Voer valide informatie in aub!";
@@ -93,7 +97,7 @@ session_start();
 
 
 <?php include_once 'navBar/navbar.php'; ?>
-
+<body>
 <div class="row d-flex justify-content-center">
     <div class="col-md-6 rounded-3 border shadow-5" style="margin-top: 150px; width: 600px;">
 
@@ -131,7 +135,7 @@ session_start();
 	</form>
 </div>
 </div>
-
+</body>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.form-outline').forEach((formOutline) => {
