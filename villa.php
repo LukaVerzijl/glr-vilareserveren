@@ -107,18 +107,18 @@ $row = mysqli_fetch_assoc($result);
                             aria-label="Slide 4"
                     ></button>
                 </div>
-                <div class="carousel-inner h-75 ">
+                <div class="carousel-inner d-flex h-75 text-center align-items-center ">
                     <div class="carousel-item active">
-                        <img src="<?php echo $row5['foto'] ?>" class="d-block w-100 h-80" alt="foto1"/>
+                        <img src="<?php echo $row5['foto'] ?>" class="d-block w-100 img-fluid align-items-center" alt="foto1"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $row5['foto2'] ?>" class="d-block w-100 h-80" alt="foto2"/>
+                        <img src="<?php echo $row5['foto2'] ?>" class="d-block w-100 img-fluid align-items-center" alt="foto2"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $row5['foto3'] ?>" class="d-block w-100 h-80" alt="foto3"/>
+                        <img src="<?php echo $row5['foto3'] ?>" class="d-block w-100 img-fluid align-items-center" alt="foto3"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $row5['foto4'] ?>" class="d-block w-100 h-80" alt="foto4"/>
+                        <img src="<?php echo $row5['foto4'] ?>" class="d-block w-100 img-fluid align-items-center" alt="foto4"/>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-mdb-target="#carouselIndicators" data-mdb-slide="prev" >
@@ -273,8 +273,11 @@ $row = mysqli_fetch_assoc($result);
 <!--                                <input type="hidden" name="gebruiker" value="admin">-->
 
                             <input type="hidden" name="huis" value="<?php echo $row['naam']; ?>">
-                    <button type="submit" class="btn btn-primary btn-block" name="submit">Bieden</button>
+                    <button type="submit" class="btn btn-primary btn-block"style="height: 100px; font-size: 30px; width: 100%;" name="submit">Bieden</button>
                 </div>
+                  </div>
+                      <?php include 'footer.php'; ?>
+
                 <?php
            } else{
        ?>
@@ -303,7 +306,7 @@ $row = mysqli_fetch_assoc($result);
 
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="overflow: hidden;">
                             <div class="col">
                                 <div class="form-outline mb-4">
                                     <input type="number" id="bod" name="bodPrijs" min="<?php echo $minbod ?>" class="form-control"  disabled/>
@@ -324,9 +327,11 @@ $row = mysqli_fetch_assoc($result);
 
 
 
+<?php include 'footer.php'; ?>
 
 
     </body>
+
     </html>
     <script>
         document.addEventListener('DOMContentLoaded', function () {

@@ -20,7 +20,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </script>
-
+<body>
+<script src="script/succes.js"></script>
 <?php
 session_start();
 
@@ -50,7 +51,7 @@ session_start();
 
                 $bestaat = true;
                 while ($bestaat) {
-                    $code = random_num(11);
+                    $code = random_num(9);
                     $sql4 = "SELECT code FROM gebruikers";
                     $result2 = $connetion->query($sql4);
                     $row2 = $result2->fetch_assoc();
@@ -97,7 +98,7 @@ session_start();
 
 
 <?php include_once 'navBar/navbar.php'; ?>
-<body>
+
 <div class="row d-flex justify-content-center">
     <div class="col-md-6 rounded-3 border shadow-5" style="margin-top: 150px; width: 600px;">
 

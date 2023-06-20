@@ -1,6 +1,6 @@
 <?php
 //inloggegevens
-$serverIp = "web02.directnode.nl";
+$serverIp = "127.0.0.1";
 $userName = "ukpqvruq_villareserveren";
 $passWord = "E5Szz00h8";
 $dataBaseName = "ukpqvruq_villareserveren";

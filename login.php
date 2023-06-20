@@ -103,6 +103,7 @@ session_start();
     </div>
 </div>
 </body>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.form-outline').forEach((formOutline) => {

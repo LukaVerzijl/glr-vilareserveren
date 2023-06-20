@@ -70,6 +70,8 @@ $user_data = check_login($connetion);
     </div>
 </div>
 </body>
+<?php include 'footer.php'; ?>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.form-outline').forEach((formOutline) => {

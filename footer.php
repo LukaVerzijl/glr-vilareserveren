@@ -18,6 +18,7 @@
     .aboutme {
         height: 127px;
         width: 60vh;
+      overflow: hidden;
     }
 </style>
 
